@@ -4,8 +4,8 @@ import Navbar from '../Navbar';
 import SocialMediaBtns from '../SocialMediaBtns';
 import styles from './welcome.module.css'
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion"
-export default function Welcome() {
 
+export default function Welcome() {
 
     const ref = useRef(null);
 
@@ -18,7 +18,6 @@ export default function Welcome() {
     const xRight = useTransform(scrollYProgress, [0, 1], [-300, 300])
     const xLeft = useTransform(scrollYProgress, [0, 1], [300, -300])
     const opacity = useTransform(scrollYProgress, [0, 0.5, 0.8], ["0%", "100%", "0%"])
-
 
     return (
         <motion.section className={styles.welcome} id="home"

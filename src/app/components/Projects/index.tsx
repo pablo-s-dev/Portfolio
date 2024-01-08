@@ -2,7 +2,7 @@
 'use client'
 import styles from './Projects.module.css'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { RefObject, useRef } from 'react';
+import { RefObject, useEffect, useRef } from 'react';
 const projectData: ProjectData[] = [
     {
         title: "ARCA Tindog ",
@@ -121,7 +121,6 @@ type ProjectData = {
 function Project({ data, root, index: projectIdx }: { data: ProjectData, root: RefObject<HTMLDivElement>, index: number }) {
 
 
-
     const ref = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -129,7 +128,7 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
         offset: ["start end", "end start"]
     })
 
-    const y = useTransform(scrollYProgress, [0, 1], [200, -200])
+    // const y = useTransform(scrollYProgress, [0, 1], ["15vmin", "-15vmin"])
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], ["0%", "100%", "0%"])
 
 
@@ -155,7 +154,7 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
                 </div>
 
                 <motion.div className={styles.about}
-                    style={{ y }}
+                // style={{ y }}
                 >
                     <h1>{data.title}</h1>
                     <p>{data.description}</p>

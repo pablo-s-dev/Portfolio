@@ -34,26 +34,25 @@ const skills: string[] = [
 
 export default function Skills() {
 
-
-    const skillElements =
-        skills.map((skillName, i) => {
-            return (<Skill  {...{ skillName }} key={i} idx={i} />)
-        })
-
+    const ref = useRef(null);
 
     return (
-        <section className={styles.skillsPage} id="skills">
+        <section className={styles.skillsPage} id="skills" ref={ref}>
 
             <div className={styles.tag}>
                 <h1 ><strong>{"<Habilidades>"}</strong></h1>
             </div>
-            
+
             <div className={styles.skillsWrapper}>
                 <div className={styles.skillset}>
-                    {skillElements}
+                    {skills.map((skillName, i) => {
+                        return (<Skill  {...{ skillName }} key={i} idx={i} />)
+                    })}
                 </div>
                 <div className={styles.skillset}>
-                    {skillElements}
+                    {skills.map((skillName, i) => {
+                        return (<Skill  {...{ skillName }} key={i + skills.length} idx={i} />)
+                    })}
                 </div>
             </div>
 

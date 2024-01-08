@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "inter";
+	src: url("/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
 :root {
 	--max-width: 1100px;
 	--border-radius: 12px;
@@ -83,10 +88,11 @@ html {
 	scroll-snap-stop: always;
 	scroll-behavior: smooth;
 	overflow-y: scroll;
+	overflow-x: clip;
 }
 
 body {
-
+	font-family: "inter";
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(
 			to bottom,
@@ -109,4 +115,11 @@ a {
 
 strong {
 	color: #5924e7;
+}
+@media (max-width: 700px) {
+	html {
+		margin: 5vmin 0;
+		scroll-snap-type: none;
+		scroll-snap-stop: always;
+	}
 }

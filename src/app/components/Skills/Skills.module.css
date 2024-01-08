@@ -15,9 +15,10 @@
 	max-width: 100%;
 	overflow: hidden;
 	text-align: center;
+	scroll-behavior: auto;
 	scroll-snap-align: center;
-	overflow-x: hidden;
 	scroll-snap-stop: always;
+	overflow-x: hidden;
 }
 .skillsWrapper {
 	display: flex;
@@ -32,7 +33,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: start;
-	animation: goUp 10s linear infinite;
+	animation: goUp 30s linear infinite;
 	flex-direction: column;
 	align-items: center;
 	padding: 2vmin 2vmin;
