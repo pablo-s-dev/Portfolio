@@ -78,8 +78,8 @@ function Intro() {
     return (
         <div className={styles.intro}>
             <div style={{ gridArea: 'phrases' }}>
-                <h1>Olá, meu nome é <strong style={{ color: '#5924E7' }}><br />Pablo Santana.</strong> </h1>
-                <h1>Sou Desenvolvedor <br /><strong style={{ color: '#5924E7' }}>Full Stack.</strong></h1>
+                <h1>Olá, me chamo <strong style={{ color: '#5924E7' }}><br />Pablo Santana.</strong> </h1>
+                <h1>Desenvolvedor <br /><strong style={{ color: '#5924E7' }}>Full Stack.</strong></h1>
             </div>
 
             <div style={{
