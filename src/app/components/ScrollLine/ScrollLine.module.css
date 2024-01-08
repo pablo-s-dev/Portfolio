@@ -1,0 +1,8 @@
+.scrollLine {
+	grid-row-start: 1;
+	grid-row-end: 4;
+	grid-column: 1;
+	margin: 0 10vmin;
+	width: 1px;
+	background: linear-gradient(#000000 0%, #5924e7 50%, #000000 100%);
+}

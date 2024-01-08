@@ -1,0 +1,126 @@
+.projectsPage {
+	position: relative;
+	margin: 50vh 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	overflow-x: clip;
+	/* justify-content: center;
+	align-items: center;
+	overflow: auto; */
+	/* background-color: aqua; */
+}
+.tag {
+	user-select: none;
+	z-index: 200;
+}
+.tag h1 {
+	font-size: 6vmin;
+}
+/* .projectViewport ::-webkit-scrollbar {
+	background: transparent;
+	width: 0;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+} */
+.projectsWrapper {
+	position: relative;
+}
+.project {
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+	position: relative;
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	min-height: 70vmin;
+	width: 90vw;
+	/* background-color: rgb(125, 87, 205); */
+	font-size: 2.5vmin;
+
+	margin: 6vmin 0;
+	transform: translate3d(0, 0, 0);
+}
+
+.img {
+	flex: 1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: rgba(7, 7, 7, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+.card {
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	min-height: 70vmin;
+	background-color: rgba(8, 8, 8, 0);
+	z-index: 100;
+}
+/* .imageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 90%;
+} */
+.about {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 200%;
+	gap: 6vmin;
+	padding: 5vmin;
+	transform: translate3d(0, 0, 0);
+}
+
+/* .video img {
+} */
+
+.fadeIn {
+	opacity: 1;
+}
+.btnContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 2vmin;
+}
+
+.btn:not([hidden]) {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	padding: 4vmin;
+	background-color: rgba(11, 11, 11, 1);
+	/* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
+	padding: 2vmin 3vmin;
+	border-radius: 5px;
+	user-select: none;
+	font-size: 2.5vmin;
+}
+.btn[hidden] {
+	display: none;
+}
+.btn:hover {
+	cursor: pointer;
+}
+.btn:active {
+	transform: scale(0.9);
+}
+
+@media (max-width: 480px) {
+	.card {
+		justify-content: center;
+		flex-direction: column;
+	}
+}
