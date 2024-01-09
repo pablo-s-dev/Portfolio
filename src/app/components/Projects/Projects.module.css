@@ -12,13 +12,15 @@
 	z-index: 200;
 }
 .tag h1 {
-	font-size: 6vmin;
+	font-size: 5vmin;
 }
 .tag:first-of-type {
 	scroll-snap-align: start;
+	scroll-snap-stop: always;
 }
 .tag:last-of-type {
 	scroll-snap-align: end;
+	scroll-snap-stop: always;
 }
 /* .projectViewport ::-webkit-scrollbar {
 	background: transparent;
@@ -100,7 +102,7 @@
 }
 
 .btn:not([hidden]) {
-	display: block;
+	display: flex;
 	text-align: center;
 	text-decoration: none;
 	color: inherit;
@@ -110,6 +112,9 @@
 	border-radius: 5px;
 	user-select: none;
 	font-size: 2.5vmin;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 .btn[hidden] {
 	display: none;

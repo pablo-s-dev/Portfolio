@@ -26,28 +26,27 @@ export default function Welcome() {
         >
             <Navbar />
 
-
-            <div className={styles.wrapper}>
-                <div className={styles.contentWrapper}>
-                    <motion.div
-                        style={{ x: xLeft }}
-                    >
-                        <Intro />
-                    </motion.div>
-                    <motion.div
-                        style={{ x: xRight }}
-                    >
-                        <Pic />
-                    </motion.div>
-                </div>
-                <div className={styles.contact_btnWrapper}>
-                    <a href="mailto:ps.login.username@gmail.com" style={{ display: 'block' }} className={styles.contact_btn} target="_blank">
-                        Entrar em contato
-
-                    </a>
-                </div>
-                <SocialMediaBtns />
+            <div className={styles.contentWrapper}>
+                <motion.div
+                    className={styles.intro}
+                    style={{ x: xLeft }}
+                >
+                    <Intro />
+                </motion.div>
+                <motion.div
+                    className={styles.pic}
+                    style={{ x: xRight }}
+                >
+                    <Pic />
+                </motion.div>
             </div>
+            <div className={styles.contact_btnWrapper}>
+                <a href="mailto:ps.login.username@gmail.com" style={{ display: 'block' }} className={styles.contact_btn} target="_blank">
+                    Entrar em contato
+
+                </a>
+            </div>
+           
 
 
 
@@ -76,19 +75,9 @@ function Name() {
 function Intro() {
     return (
         <div className={styles.intro}>
-            <div style={{ gridArea: 'phrases' }}>
+            <div>
                 <h1>Olá, me chamo <strong style={{ color: '#5924E7' }}><br />Pablo Santana.</strong> </h1>
                 <h1>Desenvolvedor <br /><strong style={{ color: '#5924E7' }}>Full Stack.</strong></h1>
-            </div>
-
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gridArea: 'button',
-
-            }}>
-
             </div>
             {/* <Contact /> */}
         </div>
@@ -99,11 +88,7 @@ function Pic() {
 
 
     return (
-        <motion.div className={styles.pic}
-
-        >
-            <img src="/ps.jpg" alt="[A picture of Pablo here]" width={'100%'} />
-        </motion.div>
+        <img src="/ps.jpg" alt="" className={styles.img} />
     )
 }
 

@@ -1,3 +1,4 @@
+import SocialMediaBtns from '../SocialMediaBtns';
 import styles from './navbar.module.css'
 
 export default function Navbar() {
@@ -19,6 +20,8 @@ export default function Navbar() {
                 <a href="#skills">
                     <NavbarButton>Habilidades</NavbarButton>
                 </a>
+
+                <SocialMediaBtns />
             </div>
             {/* <SocialMediaIcons /> */}
 

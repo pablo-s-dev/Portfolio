@@ -161,8 +161,12 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
                     <p>Tags: {data.tags.join(" | ")}</p>
 
                     <div className={styles.btnContainer}>
-                        <a className={styles.btn} hidden={data.openUrl === undefined} href={data.openUrl} target='_blank'>Abrir</a>
-                        <a className={styles.btn} hidden={data.gitUrl === undefined} href={data.gitUrl} target='_blank'>Código fonte</a>
+                        <div className={styles.btn} hidden={data.openUrl === undefined} >
+                            <a href={data.openUrl} target='_blank'>Abrir</a>
+                        </div>
+                        <div className={styles.btn} hidden={data.gitUrl === undefined}>
+                            <a href={data.gitUrl} target='_blank'>Código fonte</a>
+                        </div>
                     </div>
                 </motion.div>
 

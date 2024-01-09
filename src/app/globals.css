@@ -118,7 +118,6 @@ strong {
 }
 @media (max-width: 700px) {
 	html {
-		margin: 5vmin 0;
 		scroll-snap-type: none;
 		scroll-snap-stop: always;
 	}
