@@ -41,8 +41,8 @@ const projectData: ProjectData[] = [
         tags: ['Flutter', 'Matemática', 'Física', 'Elétrica', 'Engenharia', 'Circuitos', 'Cálculo', 'Fasores', 'Corrente Alternada']
     },
     {
-        title: "PoliProcess",
-        description: "PoliProcess é um website de uma ideia de negócio de venda de polímeros triturados. Esse website foi feito em NextJS, Typescript e Tailwind CSS.",
+        title: "Poliprocess",
+        description: "Poliprocess é um website de uma ideia de negócio de venda de polímeros triturados. Esse website foi feito em NextJS, Typescript e Tailwind CSS.",
         imgPath: '/ProjectImgs/Poliprocess.jpg',
         gitUrl: 'https://github.com/pablo-s-dev/Poliprocess',
         openUrl: 'https://poliprocess.netlify.app/',
@@ -161,12 +161,16 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
                     <p>Tags: {data.tags.join(" | ")}</p>
 
                     <div className={styles.btnContainer}>
-                        <div className={styles.btn} hidden={data.openUrl === undefined} >
-                            <a href={data.openUrl} target='_blank'>Abrir</a>
-                        </div>
-                        <div className={styles.btn} hidden={data.gitUrl === undefined}>
-                            <a href={data.gitUrl} target='_blank'>Código fonte</a>
-                        </div>
+                        <a href={data.openUrl} target='_blank'>
+                            <div className={styles.btn} hidden={data.openUrl === undefined} >
+                                Abrir
+                            </div>
+                        </a>
+                        <a href={data.gitUrl} target='_blank'>
+                            <div className={styles.btn} hidden={data.gitUrl === undefined}>
+                                Código fonte
+                            </div>
+                        </a>
                     </div>
                 </motion.div>
 
