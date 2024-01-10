@@ -95,7 +95,7 @@
 .btnContainer {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 	width: 100%;
 	gap: min(2vmin, 5px);
 }

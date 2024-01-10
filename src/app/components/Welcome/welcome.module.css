@@ -134,12 +134,12 @@
 		height: 60vmin;
 	} */
 	.pic {
-		width: 40vmin;
-		height: 40vmin;
+		width: min(350px, 30vh);
+		height: min(350px, 30vh);
 	}
 	.img {
 		display: block;
-		width: 40vmin;
-		height: 40vmin;
+		width: min(350px, 30vh);
+		height: min(350px, 30vh);
 	}
 }
