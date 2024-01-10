@@ -39,7 +39,6 @@
 	width: 90vw;
 	/* background-color: rgb(125, 87, 205); */
 	font-size: 2.5vmin;
-
 	scroll-behavior: smooth;
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
@@ -98,7 +97,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	gap: 2vmin;
+	gap: min(2vmin, 5px);
 }
 
 .btn:not([hidden]) {
@@ -106,7 +105,7 @@
 	text-align: center;
 	text-decoration: none;
 	color: inherit;
-	padding: 2vmin 6vmin;
+	padding: 1vmin 6vmin;
 	background-color: rgba(31, 31, 31, 1);
 	/* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
 	border-radius: 5px;

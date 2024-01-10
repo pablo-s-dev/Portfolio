@@ -1,18 +1,18 @@
 .social {
 	position: absolute;
-	right: 4vmin;
+	left: 0;
 	display: flex;
-	height: max-content;
 	flex-direction: row;
+	width: 100%;
 	gap: 1vmin;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	padding: 2.5% 0;
+	padding: 0 min(20px, 4vmin);
 }
 
 .social svg {
 	cursor: pointer;
-	height: max(4vmin, 10px);
+	height: max(4vmin, 30px);
 }
 .social svg:active {
 	transform: scale(0.9);
