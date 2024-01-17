@@ -31,7 +31,7 @@ const projectData: ProjectData[] = [
         imgPath: '/ProjectImgs/InfiniteCanvasDrawing2.jpg',
         openUrl: 'https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas',
         gitUrl: 'https://github.com/pablo-s-dev/InfiniteCanvas',
-        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Language Learning', 'Website', 'Web', 'Web Scrapping', 'Education', 'Learning']
+        tags: ['React Native', 'Typescript', 'Drawing']
     },
     {
         title: "PhasorCalc",
