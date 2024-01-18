@@ -15,9 +15,9 @@ export default function Welcome() {
     })
 
     const y = useTransform(scrollYProgress, [0, 1], [200, -200])
-    const xRight = useTransform(scrollYProgress, [0, 1], [-300, 300])
-    const xLeft = useTransform(scrollYProgress, [0, 1], [300, -300])
-    const opacity = useTransform(scrollYProgress, [0, 0.5, 0.8], ["0%", "100%", "0%"])
+    const xRight = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, 300])
+    const xLeft = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, -300])
+    const opacity = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], ["0%", "100%", "100%", "0%"])
 
     return (
         <motion.section className={styles.welcome} id="home"
@@ -46,7 +46,7 @@ export default function Welcome() {
 
                 </a>
             </div>
-           
+
 
 
 

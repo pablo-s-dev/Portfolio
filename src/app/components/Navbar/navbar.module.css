@@ -8,6 +8,8 @@
 	width: 100%;
 	z-index: 10;
 	background-color: black;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
 }
 .navbar_btn {
 	display: flex;
@@ -42,6 +44,11 @@
 	justify-content: center;
 	align-items: center;
 	gap: 4vmin;
+	z-index: 200;
+}
+
+.routingBtnsContainer a {
+	z-index: 200;
 }
 .name {
 	display: flex;

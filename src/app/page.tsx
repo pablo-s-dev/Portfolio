@@ -6,6 +6,7 @@ import ScrollLine from './components/ScrollLine'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { useEffect, useRef } from 'react'
+import Navbar from './components/Navbar'
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
       {/* <ScrollLine /> */}
       <Projects />
       <Skills />
+      <Navbar />
     </main>
   )
 }
