@@ -18,6 +18,13 @@ const projectData: ProjectData[] = [
         tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Language Learning', 'Website', 'Web', 'Education', 'Learning']
     },
     {
+        title: "Youtube ActiveStudy with AI",
+        description: "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial gpt-3.5-turbo da OpenAi.",
+        imgPath: '/ProjectImgs/Youtube ActiveStudy with AI.png',
+        openUrl: 'https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR',
+        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Learning', 'Extension', 'Web', 'Education', 'Learning', 'AI', 'Machine Learning', 'OpenAi', 'GPT-3']
+    },
+    {
         title: "Guess the word",
         description: "Guess the word é uma plataforma que utiliza a técnica de recordação ativa para fazer com que conceitos virem gatilhos fortes para palavras em inglês. A partir das definições, é preciso se esforçar para lembrar da palavra em questão.",
         imgPath: '/ProjectImgs/GuessTheWordM.jpg',
