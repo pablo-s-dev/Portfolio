@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { RefObject, useEffect, useRef } from 'react';
 const projectData: ProjectData[] = [
     {
-        title: "ARCA Tindog ",
+        title: "ARCA Tindog",
         description: "ARCA Tindog é um aplicativo feito para uma ONG de animais chamada ARCA, da cidade de Janaúba-MG. Esse app facilita o processo de adoção, doação, busca por pets desaparecidos e denúncias. Além disso, conta com um recurso de inteligência artificial para detectar cachorros perdidos.",
         imgPath: '/ProjectImgs/Tindog.jpg',
         tags: ['Flutter', 'Python', 'IA', 'Machine Leaning', 'ONG', 'Animais', 'Flask', 'Firebase', 'Google Cloud Functions']
@@ -19,10 +19,10 @@ const projectData: ProjectData[] = [
     },
     {
         title: "Youtube ActiveStudy with AI",
-        description: "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial gpt-3.5-turbo da OpenAi.",
+        description: "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial gpt-3.5-turbo da OpenAI.",
         imgPath: '/ProjectImgs/Youtube ActiveStudy with AI.png',
         openUrl: 'https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR',
-        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Learning', 'Extension', 'Web', 'Education', 'Learning', 'AI', 'Machine Learning', 'OpenAi', 'GPT-3']
+        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Learning', 'Extension', 'Web', 'Education', 'AI', 'Machine Learning', 'OpenAi', 'GPT-3']
     },
     {
         title: "Guess the word",
@@ -154,7 +154,7 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
         >
             <div className={styles.card}>
 
-                <div className={styles.img} style={{ backgroundImage: `url(${data.imgPath})` }} >
+                <div className={styles.img} style={{ backgroundImage: `url("${data.imgPath}")`, filter: data.imgPath == "/ProjectImgs/Youtube ActiveStudy with AI.png" ? " grayscale(1) brightness(3)" : undefined }} >
 
 
 
