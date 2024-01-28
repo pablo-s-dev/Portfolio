@@ -12,15 +12,18 @@
 	z-index: 200;
 }
 .tag h1 {
+	text-align: center;
 	font-size: 5vmin;
 }
 .tag:first-of-type {
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
+	scroll-margin-top: 10px;
 }
 .tag:last-of-type {
 	scroll-snap-align: end;
 	scroll-snap-stop: always;
+	scroll-margin-bottom: 10px;
 }
 /* .projectViewport ::-webkit-scrollbar {
 	background: transparent;

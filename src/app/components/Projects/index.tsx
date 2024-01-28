@@ -22,7 +22,7 @@ const projectData: ProjectData[] = [
         description: "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial gpt-3.5-turbo da OpenAI.",
         imgPath: '/ProjectImgs/Youtube ActiveStudy with AI.png',
         openUrl: 'https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR',
-        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Learning', 'Extension', 'Web', 'Education', 'AI', 'Machine Learning', 'OpenAi', 'GPT-3']
+        tags: ['Javascript', 'Vanilla', 'CSS', 'HTML', 'Learning', 'Extension', 'Web', 'Education', 'AI', 'Machine Learning', 'OpenAI', 'GPT-3']
     },
     {
         title: "Guess the word",
@@ -99,15 +99,21 @@ export default function Projects() {
             <div className={styles.projectsPage} id="projects"
 
             >
-                <div className={styles.tag}>
-                    <h1 ><strong>{"<Projetos>"}</strong></h1>
+
+
+                <div ref={projectWrapper} className={styles.projectsWrapper} >
+                    <div className={styles.tag}>
+                        <h1 ><strong>{"<Projetos>"}</strong></h1>
+                    </div>
+                    {...projectList}
+
+                    <div className={styles.tag}>
+                        <h1 ><strong>{"</Projetos>"}</strong></h1>
+                    </div>
+
+
                 </div>
 
-                <div ref={projectWrapper} className={styles.projectsWrapper} >{...projectList}  </div>
-
-                <div className={styles.tag}>
-                    <h1 ><strong>{"</Projetos>"}</strong></h1>
-                </div>
 
             </div>
         </div>

@@ -88,7 +88,7 @@ function Pic() {
 
 
     return (
-        <img src="/ps.jpg" alt="" className={styles.img} />
+        <div className={styles.img}> </div>
     )
 }
 
