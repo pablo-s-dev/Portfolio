@@ -140,7 +140,6 @@ function Intro() {
 
                     const start = lastStart + lastDur
 
-                    console.log(textElementIdx)
 
                     const wrap = (<TextToBeTyped text={child} start={skip ? 0 : start} timePerChar={skip ? 0 : timePerChar} index={textElementIdx} lastIdx={lastIndex} />)
 
@@ -170,12 +169,10 @@ function Intro() {
 
 
             const keepCursor = useMemo(() => {
-                console.log("INDEX: ", index)
+
 
                 return index === lastIdx!.current
             }, [index, lastIdx])
-
-            console.log(index)
 
 
             const [textState, setTextState] = useState<TextState>({ amount: 0, showCursor: false, beginTyping: false });
