@@ -80,8 +80,10 @@
 	flex: 1;
 	padding: 40px;
 }
+
 .img {
 	display: flex;
+
 	flex: 1;
 	justify-content: center;
 	align-items: center;
@@ -90,11 +92,14 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	object-fit: contain;
+	background-color: #000;
+
 	/* border-style: solid;
 	border-bottom: 4vmin; */
-	/* border-color: #5924e7; */
-	background-image: url("/ps.jpg");
+	/* border-color: rgb(87, 35, 231); */
+	background-image: url("/psBottomBorder.jpg");
 }
+
 .social {
 }
 /* @media (max-width: 700px) {
@@ -156,5 +161,19 @@
 		display: block;
 		width: min(350px, 30vh);
 		height: min(350px, 30vh);
+	}
+}
+.cursor {
+	animation: blinking 0.8s infinite;
+}
+@keyframes blinking {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
