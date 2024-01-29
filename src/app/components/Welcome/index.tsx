@@ -3,7 +3,7 @@ import { RefObject, useEffect, useMemo, useRef, useState, useCallback } from 're
 import Navbar from '../Navbar';
 import SocialMediaBtns from '../SocialMediaBtns';
 import styles from './welcome.module.css'
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion"
+import { MotionValue, motion, useScroll, useSpring, useTransform } from "framer-motion"
 import React from 'react';
 
 export default function Welcome() {
@@ -16,8 +16,8 @@ export default function Welcome() {
     })
 
     const y = useTransform(scrollYProgress, [0, 1], [200, -200])
-    const xRight = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, 300])
-    const xLeft = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, -300])
+    const xRight = useSpring(useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, 300]))
+    const xLeft = useSpring(useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, -300]))
     const opacity = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], ["0%", "100%", "100%", "0%"])
 
     return (
@@ -87,13 +87,13 @@ function Intro() {
         beginTyping: boolean
     };
 
-    function TypingEffectBlock({ children, timePerChar }: { children: React.ReactElement[], timePerChar: number }) {
+    function TypingEffectBlock({ children, timePerChar }: { children: React.ReactElement | React.ReactElement[], timePerChar: number }) {
 
         const lastIndex = useRef(0);
         let textElementIdx = 0;
         let lastDur = 0
         let lastStart = 0
-        const delay = 10
+        const delay = 50
 
 
 
