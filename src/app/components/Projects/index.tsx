@@ -85,12 +85,8 @@ export default function Projects() {
         return (<Project data={data} root={projectsPage} index={i} key={i} />)
     })
 
-    const ref = useRef(null);
 
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
+
 
     return (
 
@@ -143,8 +139,6 @@ function Project({ data, root, index: projectIdx }: { data: ProjectData, root: R
 
     // const y = useTransform(scrollYProgress, [0, 1], ["15vmin", "-15vmin"])
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], ["0%", "100%", "0%"])
-
-
 
     return (
 

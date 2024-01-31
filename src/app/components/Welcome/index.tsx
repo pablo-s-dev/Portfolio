@@ -5,6 +5,7 @@ import SocialMediaBtns from '../SocialMediaBtns';
 import styles from './welcome.module.css'
 import { MotionValue, motion, useScroll, useSpring, useTransform } from "framer-motion"
 import React from 'react';
+import { easeIn } from "framer-motion"
 
 export default function Welcome() {
 
@@ -15,10 +16,8 @@ export default function Welcome() {
         offset: ["start end", "end start"],
     })
 
-    const y = useTransform(scrollYProgress, [0, 1], [200, -200])
-    const xRight = useSpring(useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, 300]))
-    const xLeft = useSpring(useTransform(scrollYProgress, [0, 0.5, 0.7, 1], [0, 0, 0, -300]))
     const opacity = useTransform(scrollYProgress, [0, 0.5, 0.7, 1], ["0%", "100%", "100%", "0%"])
+
 
     return (
         <motion.section className={styles.welcome} id="home"
@@ -30,13 +29,13 @@ export default function Welcome() {
             <div className={styles.contentWrapper}>
                 <motion.div
                     className={styles.intro}
-                    style={{ x: xLeft }}
+
                 >
                     <Intro />
                 </motion.div>
                 <motion.div
                     className={styles.pic}
-                    style={{ x: xRight }}
+
                 >
                     <Pic />
                 </motion.div>
@@ -84,7 +83,8 @@ function Intro() {
     type TextState = {
         amount: number,
         showCursor: boolean,
-        beginTyping: boolean
+        beginTyping: boolean,
+        startBlinking: boolean,
     };
 
     function TypingEffectBlock({ children, timePerChar }: { children: React.ReactElement | React.ReactElement[], timePerChar: number }) {
@@ -175,7 +175,7 @@ function Intro() {
             }, [index, lastIdx])
 
 
-            const [textState, setTextState] = useState<TextState>({ amount: 0, showCursor: false, beginTyping: false });
+            const [textState, setTextState] = useState<TextState>({ amount: 0, showCursor: false, beginTyping: false, startBlinking: false });
 
             const j = useRef(0);
 
@@ -218,7 +218,7 @@ function Intro() {
 
                             setTextState(prevTextState => {
 
-                                const newTextState = { ...prevTextState, showCursor: keepCursor ?? false };
+                                const newTextState = { ...prevTextState, showCursor: keepCursor ?? false, startBlinking: keepCursor ?? false };
 
 
                                 return newTextState;
@@ -253,7 +253,7 @@ function Intro() {
 
             return (
                 <>
-                    <span>{text.slice(0, j.current)}</span><span className={styles.cursor} style={{ visibility: textState.showCursor && timePerChar != 0 ? 'visible' : 'hidden' }}>{cursor}</span>
+                    <span>{text.slice(0, j.current)}</span><span className={textState.startBlinking ? styles.blinking : ''} style={{ visibility: textState.showCursor && timePerChar != 0 ? 'visible' : 'hidden' }}>{cursor}</span>
                 </>
 
             )
@@ -264,12 +264,14 @@ function Intro() {
 
     return (
         <div className={styles.intro}>
-            <TypingEffectBlock timePerChar={70}>
+            <div>
                 <h1>Olá, me chamo</h1>
                 <h1><strong>Pablo Santana.</strong></h1>
-                <h1>Desenvolvedor</h1>
-                <h1><strong>Full Stack.</strong></h1>
-            </TypingEffectBlock>
+                <TypingEffectBlock timePerChar={70}>
+                    <h1>Desenvolvedor</h1>
+                    <h1><strong>Full Stack.</strong></h1>
+                </TypingEffectBlock>
+            </div>
         </div>
     )
 }
