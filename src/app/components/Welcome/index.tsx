@@ -235,7 +235,7 @@ function Intro() {
                         setTextState(prevTextState => {
 
 
-                            const newTextState = { ...prevTextState, lastIndexVisible: j.current };
+                            const newTextState = { ...prevTextState, amount: j.current };
 
 
                             return newTextState;
@@ -253,7 +253,7 @@ function Intro() {
 
             return (
                 <>
-                    <span>{text.slice(0, j.current)}</span><span className={textState.startBlinking ? styles.blinking : ''} style={{ visibility: textState.showCursor && timePerChar != 0 ? 'visible' : 'hidden' }}>{cursor}</span>
+                    <span>{text.slice(0, textState.amount)}</span><span className={textState.startBlinking ? styles.blinking : ''} style={{ visibility: textState.showCursor && timePerChar != 0 ? 'visible' : 'hidden' }}>{cursor}</span>
                 </>
 
             )
@@ -267,7 +267,7 @@ function Intro() {
             <div>
                 <h1>Olá, me chamo</h1>
                 <h1><strong>Pablo Santana.</strong></h1>
-                <TypingEffectBlock timePerChar={70}>
+                <TypingEffectBlock timePerChar={80}>
                     <h1>Desenvolvedor</h1>
                     <h1><strong>Full Stack.</strong></h1>
                 </TypingEffectBlock>
