@@ -267,10 +267,12 @@ function Intro() {
             <div>
                 <h1>Olá, me chamo</h1>
                 <h1><strong>Pablo Santana.</strong></h1>
-                <TypingEffectBlock timePerChar={80}>
+                <h1>Desenvolvedor</h1>
+                <h1><strong>Full Stack.</strong></h1>
+                {/* <TypingEffectBlock timePerChar={80}>
                     <h1>Desenvolvedor</h1>
                     <h1><strong>Full Stack.</strong></h1>
-                </TypingEffectBlock>
+                </TypingEffectBlock> */}
             </div>
         </div>
     )
