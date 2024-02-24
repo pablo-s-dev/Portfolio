@@ -21,7 +21,7 @@ export default function Home() {
     // className = { styles.main }
     <>
       <Head>
-        <link rel="preload" href="/Fonts/Inter.ttf" as="font" type="font/ttf"></link>
+        <link rel="preload" href="/Fonts/Inter.ttf" as="font"></link>
         <link rel="preload" href="/ps.jpg" as="image" ></link>
       </Head>
       <main className={styles.main} ref={ref}>
