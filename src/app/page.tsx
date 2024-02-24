@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
-
+import Head from "next/head";
 
 
 
@@ -19,12 +19,19 @@ export default function Home() {
 
   return (
     // className = { styles.main }
-    <main className={styles.main} ref={ref}>
-      <Welcome />
-      {/* <ScrollLine /> */}
-      <Projects />
-      <Skills />
-      <Navbar />
-    </main>
+    <>
+      <Head>
+        <link rel="preload" href="/Fonts/Inter.ttf" as="font" type="font/ttf"></link>
+        <link rel="preload" href="/ps.jpg" as="image" ></link>
+      </Head>
+      <main className={styles.main} ref={ref}>
+
+        <Welcome />
+        {/* <ScrollLine /> */}
+        <Projects />
+        <Skills />
+        <Navbar />
+      </main>
+    </>
   )
 }
