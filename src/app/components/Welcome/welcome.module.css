@@ -48,10 +48,10 @@
 	display: block;
 	background-color: rgba(20, 20, 20, 1);
 	/* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
-	padding: 4vmin 3vmin;
+	padding: 1.5rem 1rem;
 	border-radius: 1vmin;
 	border: none;
-	font-size: 2.5vmin;
+	font-size: 1rem;
 }
 
 .contact_btn:hover {
@@ -78,15 +78,22 @@
 	align-items: stretch;
 	overflow: hidden;
 	flex: 1;
-	padding: 40px;
+}
+
+.imgWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
 }
 
 .img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 20rem;
+	height: 20rem;
 	display: flex;
-
-	flex: 1;
-	justify-content: center;
-	align-items: center;
 	background-clip: content-box;
 	background-position: center;
 	background-size: contain;
@@ -100,8 +107,6 @@
 	background-image: url("/psBottomBorder.jpg");
 }
 
-.social {
-}
 /* @media (max-width: 700px) {
 	 .wrapper {
 		grid-template-columns: 1fr 1fr;

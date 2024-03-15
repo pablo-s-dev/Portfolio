@@ -16,6 +16,7 @@ html {
 
 body {
 	font-family: "inter";
+	font-display: block;
 	color: whitesmoke;
 	background-color: black;
 	overflow-y: auto;

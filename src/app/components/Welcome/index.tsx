@@ -282,8 +282,9 @@ function Pic() {
 
 
     return (
-        <div className={styles.img}>
-
+        <div className={styles.imgWrapper}>
+            <div className={styles.img}>
+            </div>
         </div>
 
     )
