@@ -159,13 +159,15 @@
 		height: 60vmin;
 	} */
 	.pic {
-		width: min(350px, 30vh);
-		height: min(350px, 30vh);
+		width: min(200px, 20rem);
+		height: min(200px, 20rem);
+		justify-content: center;
+		align-items: center;
 	}
 	.img {
 		display: block;
-		width: min(350px, 30vh);
-		height: min(350px, 30vh);
+		width: min(200px, 20rem);
+		height: min(200px, 20rem);
 	}
 }
 .blinking {
