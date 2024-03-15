@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "inter";
-	src: url("/fonts/Inter.ttf");
+	src: url("/Fonts/Inter.ttf");
 }
 
 :root {
@@ -93,7 +93,7 @@ html {
 
 body {
 	font-family: "inter";
-	color: rgb(var(--foreground-rgb));
+	color: whitesmoke;
 	background: linear-gradient(
 			to bottom,
 			transparent,
