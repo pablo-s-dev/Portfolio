@@ -30,7 +30,7 @@ export default function Home() {
         {/* <ScrollLine /> */}
         <Projects />
         <Skills />
-        <Navbar />
+        {/* <Navbar /> */}
       </main>
     </>
   )
