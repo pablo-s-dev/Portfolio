@@ -33,7 +33,7 @@
 	padding: 0 2vmin;
 }
 .intro h1 {
-	font-size: calc(min(calc(60px + 1vmin), 8vw));
+	font-size: calc(min(calc(40px + 1.5vmin), 8vw));
 }
 
 .contact_btnWrapper {
@@ -89,8 +89,8 @@
 .img {
 	max-width: 100%;
 	max-height: 100%;
-	width: min(calc(20rem + 1.5vmin), 60vmin);
-	height: min(calc(20rem + 1.5vmin), 60vmin);
+	width: min(calc(10rem + 12vmin), 60vmin);
+	height: min(calc(10rem + 12vmin), 60vmin);
 	display: flex;
 	background-clip: content-box;
 	background-position: center;
@@ -139,9 +139,9 @@
 	}
 } */
 
-@media (max-width: 48rem) {
+@media (max-width: 700px) {
 	.intro h1 {
-		font-size: min(60px, 7vw);
+		font-size: 2rem;
 		line-height: 130%;
 	}
 	.contentWrapper {
@@ -168,10 +168,10 @@
 		height: min(200px, 20rem);
 	}
 }
-@media (min-width: 80rem) {
+@media (min-width: 1400px) {
 	.img {
-		width: min(calc(20rem + 5vmin), 60vmin);
-		height: min(calc(20rem + 5vmin), 60vmin);
+		width: 24rem;
+		height: 24rem;
 	}
 	.contentWrapper {
 		display: flex;
@@ -179,14 +179,14 @@
 		width: 100%;
 		flex-direction: row;
 		justify-content: center;
-		gap: 2vmin;
+		gap: 50px;
 		align-items: stretch;
 		flex-wrap: wrap;
 		margin-top: 5vh;
 		/* flex-wrap: wrap; */
 	}
 	.intro h1 {
-		font-size: calc(min(calc(65px + 1.5vmin), 8vw));
+		font-size: 5rem;
 	}
 }
 
