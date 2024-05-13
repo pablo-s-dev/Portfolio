@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
 import Head from "next/head";
+import FontFaceObserver from 'fontfaceobserver';
 
 
 
@@ -15,7 +16,13 @@ export default function Home() {
 
   const ref = useRef(null);
 
+  useEffect(() => {
+    const font = new FontFaceObserver('inter');
 
+    font.load().then(() => {
+      document.documentElement.classList.add('font-loaded');
+    });
+  }, []);
 
   return (
     // className = { styles.main }

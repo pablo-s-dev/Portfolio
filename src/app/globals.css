@@ -24,6 +24,12 @@ body {
 	overflow-x: clip;
 	--scrollbarBG: #101010;
 	--thumbBG: #ffffff;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.font-loaded body {
+	opacity: 1;
 }
 
 a {
