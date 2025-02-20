@@ -1,29 +1,29 @@
 .projectsPage {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100dvw;
-	margin: 50vh 0;
-	overflow-x: clip;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100dvw;
+    margin: 50vh 0;
+    overflow-x: clip;
 }
 .tag {
-	user-select: none;
-	z-index: 200;
+    user-select: none;
+    z-index: 200;
 }
 .tag h1 {
-	text-align: center;
-	font-size: 5vmin;
+    text-align: center;
+    font-size: 5vmin;
 }
 .tag:first-of-type {
-	scroll-snap-align: start;
-	scroll-snap-stop: always;
-	scroll-margin-top: 10px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 10px;
 }
 .tag:last-of-type {
-	scroll-snap-align: end;
-	scroll-snap-stop: always;
-	scroll-margin-bottom: 10px;
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+    scroll-margin-bottom: 10px;
 }
 /* .projectViewport ::-webkit-scrollbar {
 	background: transparent;
@@ -32,44 +32,39 @@
 	-ms-overflow-style: none;
 } */
 .projectsWrapper {
-	position: relative;
+    position: relative;
 }
 .project {
-	position: relative;
-	display: flex;
-	align-items: center;
-	min-height: 70vmin;
-	width: 90vw;
-	/* background-color: rgb(125, 87, 205); */
-	font-size: 2.5vmin;
-	scroll-behavior: smooth;
-	scroll-snap-align: center;
-	scroll-snap-stop: always;
-	margin: 6vmin 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 70vmin;
+    width: 90vw;
+    /* background-color: rgb(125, 87, 205); */
+    font-size: 2.5vmin;
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    margin: 6vmin 0;
 }
 .project:first-of-type,
 .project:last-of-type {
-	scroll-snap-align: none !important;
+    scroll-snap-align: none !important;
 }
 
-.img {
-	flex: 1;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-color: rgba(7, 7, 7, 1);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100%;
-}
 .card {
-	display: flex;
-	align-items: stretch;
-	width: 100%;
-	min-height: 70vmin;
-	background-color: rgba(8, 8, 8, 0);
-	z-index: 100;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 70vh;
+    max-height: 90vh;
+    background-color: rgba(8, 8, 8, 0);
+    z-index: 100;
+    overflow: auto;
+    gap: 2vmin;
+}
+.img {
+    max-height: 60vh;
 }
 /* .imageContainer {
 	display: flex;
@@ -79,53 +74,59 @@
 	height: 90%;
 } */
 .about {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	line-height: 200%;
-	gap: 6vmin;
-	padding: 5vmin;
-	transform: translate3d(0, 0, 0);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+    line-height: 200%;
+    gap: 6vmin;
+    padding: 5vmin;
+    transform: translate3d(0, 0, 0);
+}
+
+.title {
+    text-align: center;
+    width: 100%;
 }
 
 /* .video img {
 } */
 
 .fadeIn {
-	opacity: 1;
+    opacity: 1;
 }
 .btnContainer {
-	display: flex;
-	justify-content: center;
-	align-items: stretch;
-	width: 100%;
-	gap: min(2vmin, 5px);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    gap: min(2vmin, 5px);
 }
 
 .btn:not([hidden]) {
-	display: flex;
-	text-align: center;
-	text-decoration: none;
-	color: inherit;
-	padding: 1vmin 6vmin;
-	background-color: rgba(31, 31, 31, 1);
-	/* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
-	border-radius: 5px;
-	user-select: none;
-	font-size: 2.5vmin;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 1vmin 6vmin;
+    background-color: rgba(31, 31, 31, 1);
+    /* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
+    border-radius: 5px;
+    user-select: none;
+    font-size: 2.5vmin;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 .btn[hidden] {
-	display: none;
+    display: none;
 }
 .btn:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 .btn:active {
-	transform: scale(0.9);
+    transform: scale(0.9);
 }
 
 /* @media (max-width: 480px) {
@@ -135,7 +136,15 @@
 } */
 
 @media (max-width: 700px) {
-	.projectsPage {
-		margin: 10vh 0;
-	}
+    .projectsPage {
+        margin: 10vh 0;
+    }
 }
+/* @media (max-width: 480px) {
+    .card {
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        max-height: max-content;
+    }
+} */

@@ -1,60 +1,60 @@
 @font-face {
-	font-family: "inter";
-	src: url("/Fonts/Inter.ttf");
-	font-display: block;
+    font-family: "inter";
+    src: url("/Fonts/Inter.ttf");
+    font-display: block;
 }
 
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 html {
-	scroll-snap-type: y mandatory;
-	scroll-snap-stop: always;
-	scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
 }
 
 body {
-	font-family: "inter";
-	font-display: block;
-	color: whitesmoke;
-	background-color: black;
-	overflow-y: auto;
-	overflow-x: clip;
-	--scrollbarBG: #101010;
-	--thumbBG: #ffffff;
-	opacity: 0;
-	transition: opacity 0.5s;
+    font-family: "inter";
+    font-display: block;
+    color: whitesmoke;
+    background-color: black;
+    overflow-y: auto;
+    overflow-x: clip;
+    --scrollbarBG: #101010;
+    --thumbBG: #ffffff;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .font-loaded body {
-	opacity: 1;
+    opacity: 1;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 strong {
-	color: #642fe0;
+    color: #642fe0;
 }
 @media (max-width: 700px) {
-	html {
-		scroll-snap-type: none;
-		scroll-snap-stop: always;
-	}
+    html {
+        scroll-snap-type: none;
+        scroll-snap-stop: always;
+    }
 }
 
-body::-webkit-scrollbar {
-	width: 11px;
+*::-webkit-scrollbar {
+    width: 11px;
 }
-body::-webkit-scrollbar-track {
-	background: var(--scrollbarBG);
+*::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
 }
-body::-webkit-scrollbar-thumb {
-	background-color: var(--thumbBG);
-	border-radius: 6px;
-	border: 3px solid var(--scrollbarBG);
+*::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
 }
