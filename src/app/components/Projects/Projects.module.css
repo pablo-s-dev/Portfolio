@@ -149,6 +149,13 @@
         align-items: center;
         justify-content: center;
     }
+    .about {
+        text-align: center;
+        align-items: stretch;
+    }
+    .btnContainer {
+        justify-content: center;
+    }
 }
 /* @media (max-width: 480px) {
     .card {
