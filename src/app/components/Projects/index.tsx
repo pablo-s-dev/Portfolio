@@ -66,9 +66,19 @@ const projects: ProjectData[] = [
     openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
   },
   {
+    title: "Infinite Canvas Drawing",
+    description:
+      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
+    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
+    openUrl:
+      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
+    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
+    tags: ["React Native", "Typescript", "Drawing"],
+  },
+  {
     title: "Youtube ActiveStudy with AI",
     description:
-      "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial gpt-3.5-turbo da OpenAI.",
+      "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial da OpenAI.",
     imgPath: "/ProjectImgs/Youtube-ActiveStudy-with-AI-screen.png",
     openUrl:
       "https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR",
@@ -84,7 +94,7 @@ const projects: ProjectData[] = [
       "AI",
       "Machine Learning",
       "OpenAI",
-      "GPT-3",
+      "GPT-4",
     ],
   },
   {
@@ -106,16 +116,7 @@ const projects: ProjectData[] = [
       "Learning",
     ],
   },
-  {
-    title: "Infinite Canvas Drawing",
-    description:
-      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
-    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
-    openUrl:
-      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
-    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
-    tags: ["React Native", "Typescript", "Drawing"],
-  },
+
   {
     title: "PhasorCalc",
     description:
@@ -130,22 +131,21 @@ const projects: ProjectData[] = [
       "Elétrica",
       "Engenharia",
       "Circuitos",
-      "Cálculo",
       "Fasores",
       "Corrente Alternada",
     ],
   },
 
-  {
-    title: "TicTacToe",
-    description: "TicTacToe é o clássico jogo da velha, feito em Flutter.",
-    imgPath: "/ProjectImgs/TicTacToe.jpg",
-    gitUrl: "https://github.com/pablo-s-dev/TicTacToe",
-    tags: ["Flutter", "Jogo", "Game"],
-  },
+  // {
+  //   title: "TicTacToe",
+  //   description: "TicTacToe é o clássico jogo da velha, feito em Flutter.",
+  //   imgPath: "/ProjectImgs/TicTacToe.jpg",
+  //   gitUrl: "https://github.com/pablo-s-dev/TicTacToe",
+  //   tags: ["Flutter", "Jogo", "Game"],
+  // },
   {
     title: "Pong",
-    description: "Pong é o clássico jogo de Ping Pong, feito em Java.",
+    description: "O clássico jogo de Ping Pong, feito em Java.",
     imgPath: "/ProjectImgs/Pong.jpg",
     gitUrl: "https://github.com/pablo-s-dev/Pong-Java",
     openUrl: "https://github.com/pablo-s-dev/Pong-Java/blob/main/dist/Pong.exe",
@@ -165,15 +165,15 @@ export default function Projects() {
     <div ref={projectsPage}>
       <div className={styles.projectsPage} id="projects">
         <div ref={projectWrapper} className={styles.projectsWrapper}>
-          <div className={styles.tag}>
+          <div className={styles.jsxTag}>
             <h1>
               <strong>{"<Projetos>"}</strong>
             </h1>
           </div>
 
-          <div style={{ marginTop: "10vmin" }}>{...projectList}</div>
+          <div>{...projectList}</div>
 
-          <div className={styles.tag}>
+          <div className={styles.jsxTag}>
             <h1>
               <strong>{"</Projetos>"}</strong>
             </h1>
@@ -226,6 +226,17 @@ function Project({
         opacity,
       }}
     >
+      <h1
+        className={styles.card_title}
+        style={{
+          fontSize: "4.5vmin",
+          fontWeight: "bold",
+          marginBottom: "1vmin",
+          textAlign: "center",
+        }}
+      >
+        {data.title}
+      </h1>
       <div className={styles.card}>
         <div
           style={{
@@ -264,18 +275,8 @@ function Project({
           className={styles.about}
           // style={{ y }}
         >
-          <h1
-            style={{
-              fontSize: "4.5vmin",
-              fontWeight: "bold",
-              marginBottom: "1vmin",
-              textAlign: "center",
-            }}
-          >
-            {data.title}
-          </h1>
           <p>{data.description}</p>
-          <p>Tags: {data.tags.join(" | ")}</p>
+          <p>Tags: {data.tags.join("; ")}</p>
 
           <div className={styles.btnContainer}>
             <a href={data.openUrl} target="_blank">

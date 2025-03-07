@@ -7,20 +7,20 @@
     margin: 50vh 0;
     overflow-x: clip;
 }
-.tag {
+.jsxTag {
     user-select: none;
     z-index: 200;
 }
-.tag h1 {
+.jsxTag h1 {
     text-align: center;
     font-size: 5vmin;
 }
-.tag:first-of-type {
+.jsxTag:first-of-type {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     scroll-margin-top: 10px;
 }
-.tag:last-of-type {
+.jsxTag:last-of-type {
     scroll-snap-align: end;
     scroll-snap-stop: always;
     scroll-margin-bottom: 10px;
@@ -37,6 +37,7 @@
 .project {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     min-height: 70vmin;
     width: 90vw;
@@ -57,12 +58,16 @@
     align-items: stretch;
     width: 100%;
     min-height: 70vh;
-    max-height: 90vh;
+    text-align: start;
     background-color: rgba(8, 8, 8, 0);
     z-index: 100;
     overflow: auto;
     gap: 2vmin;
 }
+.card_title {
+    padding-bottom: 5vmin;
+}
+
 .img {
     max-height: 60vh;
 }
@@ -77,8 +82,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    text-align: justify;
-    align-items: center;
+    text-wrap: balance;
+    justify-content: center;
+    align-items: flex-start;
     line-height: 200%;
     gap: 6vmin;
     padding: 5vmin;
@@ -98,8 +104,7 @@
 }
 .btnContainer {
     display: flex;
-    justify-content: center;
-    align-items: stretch;
+    justify-content: flex-start;
     width: 100%;
     gap: min(2vmin, 5px);
 }
@@ -138,6 +143,11 @@
 @media (max-width: 700px) {
     .projectsPage {
         margin: 10vh 0;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 /* @media (max-width: 480px) {
