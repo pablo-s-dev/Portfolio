@@ -46,7 +46,10 @@ strong {
         scroll-snap-stop: always;
     }
 }
-
+.no-scroll-snap {
+    scroll-snap-type: none;
+    scroll-snap-stop: always;
+}
 *::-webkit-scrollbar {
     width: 11px;
 }

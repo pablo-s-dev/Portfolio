@@ -1,26 +1,28 @@
 "use client";
-import {
-  RefObject,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  useCallback,
-} from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "../Navbar";
-import SocialMediaBtns from "../SocialMediaBtns";
 import styles from "./welcome.module.css";
-import {
-  MotionValue,
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React from "react";
-import { easeIn } from "framer-motion";
 
 export default function Welcome() {
+  useEffect(() => {
+    function checkZoom() {
+      const zoomThreshold = 1.0;
+      if (window.devicePixelRatio > zoomThreshold) {
+        document.documentElement.classList.add("no-scroll-snap");
+      } else {
+        document.documentElement.classList.remove("no-scroll-snap");
+      }
+    }
+
+    checkZoom();
+    window.addEventListener("resize", checkZoom);
+    return () => {
+      window.removeEventListener("resize", checkZoom);
+    };
+  }, []);
+
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
