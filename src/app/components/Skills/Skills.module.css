@@ -1,65 +1,65 @@
 .tag {
-	user-select: none;
-	z-index: 200;
+    user-select: none;
+    z-index: 200;
 }
 .tag h1 {
-	font-size: 5vmin;
+    font-size: 5vmin;
 }
 
 .skillsPage {
-	display: flex;
-	height: 100vh;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 2vmin 10vmin;
-	max-width: 100%;
-	overflow: hidden;
-	text-align: center;
-	scroll-behavior: auto;
-	scroll-snap-align: center;
-	scroll-snap-stop: always;
-	overflow-x: hidden;
+    display: flex;
+    height: 100svh;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vmin 10vmin;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    scroll-behavior: auto;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    overflow-x: hidden;
 }
 .skillsWrapper {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	width: 100%;
-	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: hidden;
 }
 
 .skillset {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	animation: goUp 15s linear infinite;
-	flex-direction: column;
-	align-items: center;
-	padding: 2vmin 2vmin;
-	gap: 4vmin;
-	transform: translate3d(0, 0, 0);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    animation: goUp 15s linear infinite;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vmin 2vmin;
+    gap: 4vmin;
+    transform: translate3d(0, 0, 0);
 }
 
 .skill {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	text-align: center;
-	align-items: center;
-	width: min-content;
-	padding: 4vmin;
-	background-color: rgb(11, 11, 11);
-	transform: translate3d(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    width: min-content;
+    padding: 4vmin;
+    background-color: rgb(11, 11, 11);
+    transform: translate3d(0, 0, 0);
 }
 .skill img {
-	margin: 4vmin;
-	width: 10vmin;
-	/* transition: all 0.2s ease-in-out; */
+    margin: 4vmin;
+    width: 10vmin;
+    /* transition: all 0.2s ease-in-out; */
 }
 .skill:hover {
-	transform: scale(1.1);
-	/* order: -2; */
+    transform: scale(1.1);
+    /* order: -2; */
 }
 /* .goToEnd{
 	position: relative;
@@ -71,18 +71,18 @@
 	background-color: aqua;
 } */
 @keyframes goLeft {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 @keyframes goUp {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateY(-100%);
-	}
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }

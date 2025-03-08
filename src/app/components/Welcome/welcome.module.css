@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    min-height: 100dvh;
+    min-height: 100svh;
     width: 100dvw;
     overflow-x: clip;
     scroll-snap-align: center;

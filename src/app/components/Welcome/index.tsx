@@ -8,8 +8,11 @@ import React from "react";
 export default function Welcome() {
   useEffect(() => {
     function checkZoom() {
+      const isMobile =
+        /Mobi|Android/i.test(navigator.userAgent) ||
+        navigator.maxTouchPoints > 1;
       const zoomThreshold = 1.0;
-      if (window.devicePixelRatio > zoomThreshold) {
+      if (window.devicePixelRatio > zoomThreshold || isMobile) {
         document.documentElement.classList.add("no-scroll-snap");
       } else {
         document.documentElement.classList.remove("no-scroll-snap");

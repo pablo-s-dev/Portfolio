@@ -1,13 +1,13 @@
 "use client";
 import styles from "./Projects.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useLayoutEffect, useRef } from "react";
 
 const projects: ProjectData[] = [
   {
     title: "ARCA Tindog",
     description:
-      "ARCA Tindog é um aplicativo feito para uma ONG de animais chamada ARCA, da cidade de Janaúba-MG. Esse app facilita o processo de adoção, doação, busca por pets desaparecidos e denúncias. Além disso, conta com um recurso de inteligência artificial para detectar cachorros perdidos.",
+      "ARCA Tindog é um app da ONG ARCA que facilita adoção, doação e busca por pets desaparecidos. Usa IA para classificar posts e detectar cães e gatos em imagens.",
     imgPath: "/ProjectImgs/Tindog_dark.jpg",
     tags: [
       "Flutter",
@@ -15,7 +15,6 @@ const projects: ProjectData[] = [
       "IA",
       "Machine Leaning",
       "ONG",
-      "Animais",
       "Flask",
       "Firebase",
       "Google Cloud Functions",
@@ -43,7 +42,7 @@ const projects: ProjectData[] = [
     title: "Hearken",
     description:
       "Hearken é uma plataforma de aprendizado de idiomas usando vídeos do YouTube. Você pode escolher um vídeo que tenha legenda no seu idioma alvo, para ser desafiado a entender cada frase. Em seguida, você será solicitado a falar ou digitar o que foi dito.",
-    imgPath: "/ProjectImgs/HearkenDesktop3.png",
+    imgPath: "/ProjectImgs/Hearken_game.png",
     openUrl: "https://hearken.netlify.app/",
     tags: [
       "Javascript",
@@ -218,6 +217,16 @@ function Project({
     ["0%", "100%", "0%"],
   );
 
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (aboutRef.current) {
+      requestAnimationFrame(() => {
+        aboutRef.current?.scrollTo({ top: 0, behavior: "auto" });
+      });
+    }
+  }, []);
+
   return (
     <motion.section
       className={styles.project}
@@ -238,59 +247,36 @@ function Project({
         {data.title}
       </h1>
       <div className={styles.card}>
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: 0,
-            overflow: "hidden",
-          }}
-        >
+        <div className={styles.imgContainer}>
           <img
             src={data.imgPath}
             className={styles.img}
             // increase quality
             loading="lazy"
             alt={data.title}
-            style={{
-              // backgroundImage: `url("${data.imgPath}")`,
-              // width: data.imgSize ? `${data.imgSize[0]}vmin` : "100%",
-              maxHeight: "70vh",
-              maxWidth: "100%",
-              objectFit: "contain",
-              width: "auto",
-              // height: data.imgSize ? `${data.imgSize[1]}vmin` : "100%",
-
-              // filter:
-              //   data.imgPath == "/ProjectImgs/Youtube ActiveStudy with AI.png"
-              //     ? " grayscale(1) brightness(3)"
-              //     : undefined,
-            }}
           />
         </div>
 
         <motion.div
+          ref={aboutRef}
           className={styles.about}
           // style={{ y }}
         >
           <p>{data.description}</p>
           <p>Tags: {data.tags.join("; ")}</p>
-
-          <div className={styles.btnContainer}>
-            <a href={data.openUrl} target="_blank">
-              <div className={styles.btn} hidden={data.openUrl === undefined}>
-                Abrir
-              </div>
-            </a>
-            <a href={data.gitUrl} target="_blank">
-              <div className={styles.btn} hidden={data.gitUrl === undefined}>
-                Código fonte
-              </div>
-            </a>
-          </div>
         </motion.div>
+        <div className={styles.btnContainer}>
+          <a href={data.openUrl} target="_blank">
+            <div className={styles.btn} hidden={data.openUrl === undefined}>
+              Abrir
+            </div>
+          </a>
+          <a href={data.gitUrl} target="_blank">
+            <div className={styles.btn} hidden={data.gitUrl === undefined}>
+              Código fonte
+            </div>
+          </a>
+        </div>
       </div>
     </motion.section>
   );
