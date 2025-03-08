@@ -1,7 +1,14 @@
 "use client";
 import styles from "./Projects.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { RefObject, useEffect, useLayoutEffect, useRef } from "react";
+import {
+  RefObject,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const projects: ProjectData[] = [
   {
@@ -213,8 +220,8 @@ function Project({
   // const y = useTransform(scrollYProgress, [0, 1], ["15vmin", "-15vmin"])
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    ["0%", "100%", "0%"],
+    [0, 0.2, 0.7, 1],
+    ["0%", "100%", "100%", "0%"],
   );
 
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -226,6 +233,29 @@ function Project({
       });
     }
   }, []);
+
+  const get_img_orientation = async (imgPath: string) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = imgPath;
+      img.onload = () => {
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+
+        const orientation = h > w ? "portrait" : "landscape";
+
+        resolve(orientation);
+      };
+    });
+  };
+
+  const [orientation, setOrientation] = useState("landscape");
+
+  useEffect(() => {
+    get_img_orientation(data.imgPath).then((orientation: any) => {
+      setOrientation(orientation);
+    });
+  }, [data.imgPath]);
 
   return (
     <motion.section
@@ -247,15 +277,15 @@ function Project({
         {data.title}
       </h1>
       <div className={styles.card}>
-        <div className={styles.imgContainer}>
-          <img
-            src={data.imgPath}
-            className={styles.img}
-            // increase quality
-            loading="lazy"
-            alt={data.title}
-          />
-        </div>
+        {/* <div className={styles.imgContainer}> */}
+        <img
+          src={data.imgPath}
+          className={`${styles.img} ${styles[orientation]}`}
+          // increase quality
+          loading="lazy"
+          alt={data.title}
+        />
+        {/* </div> */}
 
         <motion.div
           ref={aboutRef}
