@@ -26,6 +26,7 @@ const projects: ProjectData[] = [
       "Firebase",
       "Google Cloud Functions",
     ],
+    openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog"
   },
   {
     title: "Poliprocess",
@@ -84,10 +85,10 @@ const projects: ProjectData[] = [
   {
     title: "Youtube ActiveStudy with AI",
     description:
-      "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, que gera um quiz utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial da OpenAI.",
+      "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, capaz de gerar um quiz interativo utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial da OpenAI.",
     imgPath: "/ProjectImgs/Youtube-ActiveStudy-with-AI-screen.png",
-    openUrl:
-      "https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR",
+    // openUrl:
+    //   "https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR",
     tags: [
       "Javascript",
       "Vanilla",
@@ -265,7 +266,9 @@ function Project({
         opacity,
       }}
     >
-      <h1
+      
+      <div className={styles.card}>
+        <h1
         className={styles.card_title}
         style={{
           fontSize: "4.5vmin",
@@ -276,7 +279,6 @@ function Project({
       >
         {data.title}
       </h1>
-      <div className={styles.card}>
         {/* <div className={styles.imgContainer}> */}
         <img
           src={data.imgPath}
@@ -298,12 +300,16 @@ function Project({
         <div className={styles.btnContainer}>
           <a href={data.openUrl} target="_blank">
             <div className={styles.btn} hidden={data.openUrl === undefined}>
-              Abrir
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
+	              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4m-8-2l8-8m0 0v5m0-5h-5" />
+              </svg>
             </div>
           </a>
-          <a href={data.gitUrl} target="_blank">
+          <a href={data.gitUrl} target="_blank" title="GitHub">
             <div className={styles.btn} hidden={data.gitUrl === undefined}>
-              Código fonte
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
+	              <path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38c0-.27.01-1.13.01-2.2c0-.75-.25-1.23-.54-1.48c1.78-.2 3.65-.88 3.65-3.95c0-.88-.31-1.59-.82-2.15c.08-.2.36-1.02-.08-2.12c0 0-.67-.22-2.2.82c-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82c-.44 1.1-.16 1.92-.08 2.12c-.51.56-.82 1.28-.82 2.15c0 3.06 1.86 3.75 3.64 3.95c-.23.2-.44.55-.51 1.07c-.46.21-1.61.55-2.33-.66c-.15-.24-.6-.83-1.23-.82c-.67.01-.27.38.01.53c.34.19.73.9.82 1.13c.16.45.68 1.31 2.69.94c0 .67.01 1.3.01 1.49c0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8" />
+              </svg>
             </div>
           </a>
         </div>
