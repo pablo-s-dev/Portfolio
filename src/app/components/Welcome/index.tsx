@@ -303,7 +303,8 @@ function Intro() {
 function Pic() {
   return (
     <div className={styles.imgWrapper}>
-      <div className={styles.img}></div>
+      <img src="/ps001.png" alt="Profile" className={styles.img} />
+      {/* <div className={styles.imgBlur}></div> */}
     </div>
   );
 }

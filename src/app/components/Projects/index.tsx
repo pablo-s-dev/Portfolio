@@ -29,6 +29,56 @@ const projects: ProjectData[] = [
     openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog"
   },
   {
+    title: "Hearken",
+    description:
+      "Hearken é uma plataforma de aprendizado de idiomas usando vídeos do YouTube. Você pode escolher um vídeo que tenha legenda no seu idioma alvo, para ser desafiado a entender cada frase. Em seguida, você será solicitado a falar ou digitar o que foi dito.",
+    imgPath: "/ProjectImgs/hearken-s1.png",
+    openUrl: "https://hearken.netlify.app/",
+    tags: [
+      "Javascript",
+      "Vanilla",
+      "CSS",
+      "HTML",
+      "Language Learning",
+      "Website",
+      "Web",
+      "Education",
+      "Learning",
+    ],
+  },
+    {
+    title: "PyContextMenu",
+    description:
+      "O PyContextMenu facilita a adição de scripts Python ao menu de contexto do Windows (menu do botão direito) para arquivos, pastas e o plano de fundo.",
+    imgPath: "/ProjectImgs/pycontextmenu_smooth.png",
+    gitUrl: "https://github.com/pablo-s-dev/PyContextMenu",
+    tags: [
+      "Python",
+      "DEV Tool"
+    ],
+  },
+  {
+    title: "Infinite Canvas Drawing",
+    description:
+      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
+    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
+    openUrl:
+      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
+    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
+    tags: ["React Native", "Typescript", "Drawing"],
+  },
+
+  {
+    title: "NurseLink",
+    description:
+      "NurseLink é um aplicativo que assiste enfermeiros no tratamento de pacientes com lesão por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões através das imagens.",
+    imgPath: "/ProjectImgs/NurseLink2.jpg",
+    tags: ["Flutter", "Machine Learning", "IA", "Health", "App", "Mobile"],
+    openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
+  },
+
+
+  {
     title: "Poliprocess",
     description:
       "Poliprocess é um website de uma ideia de negócio de venda de polímeros triturados. Esse website foi feito em NextJS, Typescript e Tailwind CSS.",
@@ -46,42 +96,7 @@ const projects: ProjectData[] = [
       "Empresa",
     ],
   },
-  {
-    title: "Hearken",
-    description:
-      "Hearken é uma plataforma de aprendizado de idiomas usando vídeos do YouTube. Você pode escolher um vídeo que tenha legenda no seu idioma alvo, para ser desafiado a entender cada frase. Em seguida, você será solicitado a falar ou digitar o que foi dito.",
-    imgPath: "/ProjectImgs/Hearken_game.png",
-    openUrl: "https://hearken.netlify.app/",
-    tags: [
-      "Javascript",
-      "Vanilla",
-      "CSS",
-      "HTML",
-      "Language Learning",
-      "Website",
-      "Web",
-      "Education",
-      "Learning",
-    ],
-  },
-  {
-    title: "NurseLink",
-    description:
-      "NurseLink é um aplicativo que assiste enfermeiros no tratamento de pacientes com lesão por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões através das imagens.",
-    imgPath: "/ProjectImgs/NurseLink2.jpg",
-    tags: ["Flutter", "Machine Learning", "IA", "Health", "App", "Mobile"],
-    openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
-  },
-  {
-    title: "Infinite Canvas Drawing",
-    description:
-      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
-    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
-    openUrl:
-      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
-    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
-    tags: ["React Native", "Typescript", "Drawing"],
-  },
+
   {
     title: "Youtube ActiveStudy with AI",
     description:
@@ -104,25 +119,25 @@ const projects: ProjectData[] = [
       "GPT-4",
     ],
   },
-  {
-    title: "Guess the word",
-    description:
-      "Guess the word é uma plataforma que utiliza a técnica de recordação ativa para fazer com que conceitos virem gatilhos fortes para palavras em inglês. A partir das definições, é preciso se esforçar para lembrar da palavra em questão.",
-    imgPath: "/ProjectImgs/GuessTheWord.jpg",
-    gitUrl: "https://github.com/pablo-s-dev/Guess-the-word",
-    openUrl: "https://guessword.netlify.app/",
-    tags: [
-      "Javascript",
-      "Vanilla",
-      "CSS",
-      "HTML",
-      "Language Learning",
-      "Website",
-      "Web",
-      "Education",
-      "Learning",
-    ],
-  },
+  // {
+  //   title: "Guess the word",
+  //   description:
+  //     "Guess the word é uma plataforma que utiliza a técnica de recordação ativa para fazer com que conceitos virem gatilhos fortes para palavras em inglês. A partir das definições, é preciso se esforçar para lembrar da palavra em questão.",
+  //   imgPath: "/ProjectImgs/GuessTheWord.jpg",
+  //   gitUrl: "https://github.com/pablo-s-dev/Guess-the-word",
+  //   openUrl: "https://guessword.netlify.app/",
+  //   tags: [
+  //     "Javascript",
+  //     "Vanilla",
+  //     "CSS",
+  //     "HTML",
+  //     "Language Learning",
+  //     "Website",
+  //     "Web",
+  //     "Education",
+  //     "Learning",
+  //   ],
+  // },
 
   {
     title: "PhasorCalc",
