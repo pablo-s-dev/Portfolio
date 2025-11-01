@@ -36,7 +36,7 @@ export default function Welcome() {
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.5, 0.7, 1],
-    ["0%", "100%", "100%", "0%"],
+    ["0%", "100%", "50%", "0%"],
   );
 
   return (
@@ -62,13 +62,14 @@ export default function Welcome() {
         </motion.div>
       </div>
       <div className={styles.contact_btnWrapper}>
+        
         <a
           href="mailto:ps.login.username@gmail.com"
-          style={{ display: "block" }}
           className={styles.contact_btn}
           target="_blank"
         >
-          Entrar em contato
+          <img src="/email.svg" alt="Email" />
+          E-mail
         </a>
       </div>
     </motion.section>

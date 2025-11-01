@@ -8,8 +8,7 @@
 	width: 100%;
 	z-index: 10;
 	background-color: black;
-	scroll-snap-align: center;
-	scroll-snap-stop: always;
+
 }
 .navbar_btn {
 	display: flex;
@@ -25,7 +24,7 @@
 }
 .navbar_btn:hover {
 	/* background-color: rgba(0, 0, 0, 0.133); */
-	color: #868686;
+	color: #b3c1e6;
 	/* border-bottom: 2px rgba(0, 0, 0, 0.268) solid; */
 	/* border-left: 2px rgba(0, 0, 0, 0.268) solid; */
 	/* transform: scale(1.1); */

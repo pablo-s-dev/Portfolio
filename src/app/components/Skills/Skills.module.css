@@ -15,14 +15,12 @@
     max-width: 100%;
     overflow: hidden;
     text-align: center;
-    scroll-behavior: auto;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
+    scroll-snap-align: start;
     overflow-x: hidden;
 }
 .skillsWrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     width: 100%;
@@ -33,34 +31,55 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    animation: goUp 15s linear infinite;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 2vmin 2vmin;
     gap: 4vmin;
     transform: translate3d(0, 0, 0);
 }
 
+.skillsWrapper:nth-child(odd) .skillset {
+    animation: goLeft 40s linear infinite;
+}
+.skillsWrapper:nth-child(even) .skillset {
+    animation: goRight 40s linear infinite;
+}
+
+.skillsWrapper:hover .skillset {
+    animation-play-state: paused;
+}
+
+
+
 .skill {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
     align-items: center;
     width: min-content;
-    padding: 4vmin;
-    background-color: rgb(11, 11, 11);
+    height: 25vmin;
+    aspect-ratio: 1;
+    background-color: rgb(20, 20, 20);
     transform: translate3d(0, 0, 0);
+    border-radius: 15px;
 }
 .skill img {
-    margin: 4vmin;
-    width: 10vmin;
+    width: 7vmin;
     /* transition: all 0.2s ease-in-out; */
 }
 .skill:hover {
     transform: scale(1.1);
     /* order: -2; */
 }
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0vmin;
+}
+
+
+
 /* .goToEnd{
 	position: relative;
 	left: 100vw;
@@ -76,6 +95,14 @@
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+@keyframes goRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
     }
 }
 @keyframes goUp {

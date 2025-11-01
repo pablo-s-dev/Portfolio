@@ -4,10 +4,10 @@
     flex-direction: column;
     align-items: center;
     width: 100dvw;
-    margin: 40svh 0;
+    padding: 0;
     overflow-x: clip;
-    /* scroll-snap-align: start;
-    scroll-snap-stop: always; */
+    scroll-snap-align: none !important;
+    margin-bottom: 20svh;
 }
 .jsxTag {
     user-select: none;
@@ -17,16 +17,27 @@
     text-align: center;
     font-size: 5vmin;
 }
+/* .jsxTag:last-of-type {
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
+    scroll-margin-bottom: 10px;
+}
 .jsxTag:first-of-type {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
+    scroll-margin-top: 10px;
+
+} */
+/* .jsxTag:first-of-type {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     scroll-margin-top: 10px;
 }
 .jsxTag:last-of-type {
     scroll-snap-align: end;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     scroll-margin-bottom: 10px;
-}
+} */
 /* .projectViewport ::-webkit-scrollbar {
 	background: transparent;
 	width: 0;
@@ -51,11 +62,12 @@
 }
 
 .project:first-of-type {
-    margin-top: 5svh;
+    margin-top: 4svh;
 }
 .project:first-of-type,
 .project:last-of-type {
     scroll-snap-align: none !important;
+    scroll-snap-stop: normal !important;
     height: calc(100svh - 12vmin);
 }
 

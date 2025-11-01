@@ -5,7 +5,6 @@ import {
   RefObject,
   useEffect,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -46,7 +45,22 @@ const projects: ProjectData[] = [
       "Learning",
     ],
   },
-    {
+  {
+    title: "Voice Reminder — Keep Focus",
+    description: "A Chrome extension that delivers custom voice reminders at regular intervals to help you stay focused.",
+    gitUrl: "https://github.com/pablo-s-dev/voice-reminder",
+    openUrl: "https://chromewebstore.google.com/detail/mldkadifcljcmkkjbgcchghmkhcanlie?utm_source=item-share-cb",
+    tags: [
+      "Javascript",
+      "Chrome Extension",
+      "Web",
+      "Education",
+      "Productivity",
+      "Focus",
+    ],
+    imgPath: "/ProjectImgs/VoiceReminder.png",
+  },
+  {
     title: "PyContextMenu",
     description:
       "O PyContextMenu facilita a adição de scripts Python ao menu de contexto do Windows (menu do botão direito) para arquivos, pastas e o plano de fundo.",
@@ -54,6 +68,20 @@ const projects: ProjectData[] = [
     gitUrl: "https://github.com/pablo-s-dev/PyContextMenu",
     tags: [
       "Python",
+      "DEV Tool"
+    ],
+  },
+  {
+    title: "Dev Create App",
+    description: 'Dev Create App — a lightweight Windows CLI that scaffolds Python, Node.js, or Vite projects in seconds: run "dev", pick options, and it creates files, opens your editor, and starts the dev server.',
+    imgPath: "/ProjectImgs/dev.png",
+    gitUrl: "https://github.com/pablo-s-dev/dev-create-app",
+    tags: [
+      "C",
+      "CLI",
+      "Python",
+      "Node.js",
+      "Vite",
       "DEV Tool"
     ],
   },
@@ -116,7 +144,7 @@ const projects: ProjectData[] = [
       "AI",
       "Machine Learning",
       "OpenAI",
-      "GPT-4",
+      "GPT",
     ],
   },
   // {

@@ -10,16 +10,17 @@
     margin: 0;
 }
 html {
-    scroll-snap-type: y mandatory;
+    --strong-color: #8f98af;
+    /* scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     scroll-behavior: smooth;
+    scroll-initial-target: nearest; */
 }
 
 body {
     font-family: "inter";
     font-display: block;
     color: whitesmoke;
-    background-color: black;
     overflow-y: auto;
     overflow-x: clip;
     --scrollbarBG: #101010;
@@ -38,7 +39,7 @@ a {
 }
 
 strong {
-    color: #868686;
+    color: var(--strong-color);
 }
 @media (max-width: 700px) {
     html {
