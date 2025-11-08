@@ -1,6 +1,6 @@
 "use client";
 import styles from "./Projects.module.css";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import {
   RefObject,
   useEffect,
@@ -10,23 +10,7 @@ import {
 } from "react";
 
 const projects: ProjectData[] = [
-  {
-    title: "ARCA Tindog",
-    description:
-      "ARCA Tindog é um app da ONG ARCA que facilita adoção, doação e busca por pets desaparecidos. Usa IA para classificar posts e detectar cães e gatos em imagens.",
-    imgPath: "/ProjectImgs/Tindog_dark.jpg",
-    tags: [
-      "Flutter",
-      "Python",
-      "IA",
-      "Machine Leaning",
-      "ONG",
-      "Flask",
-      "Firebase",
-      "Google Cloud Functions",
-    ],
-    openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog"
-  },
+
   {
     title: "Hearken",
     description:
@@ -45,6 +29,34 @@ const projects: ProjectData[] = [
       "Learning",
     ],
   },
+  
+  {
+    title: "NurseLink",
+    description:
+      "NurseLink é um aplicativo que assiste enfermeiros no tratamento de pacientes com lesão por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões através das imagens.",
+    imgPath: "/ProjectImgs/NurseLink2.jpg",
+    tags: ["Flutter", "Machine Learning", "IA", "Health", "App", "Mobile"],
+    openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
+  },
+
+  {
+    title: "Tindog",
+    description:
+      "Tindog é um app da ONG ARCA que facilita adoção, doação e busca por pets desaparecidos. Usa IA para classificar posts e detectar cães e gatos em imagens.",
+    imgPath: "/ProjectImgs/tindog-2.jpeg",
+    tags: [
+      "Flutter",
+      "Python",
+      "IA",
+      "Machine Leaning",
+      "ONG",
+      "Flask",
+      "Firebase",
+      "Google Cloud Functions",
+    ],
+    openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog"
+  },
+
   {
     title: "Voice Reminder — Keep Focus",
     description: "A Chrome extension that delivers custom voice reminders at regular intervals to help you stay focused.",
@@ -60,6 +72,19 @@ const projects: ProjectData[] = [
     ],
     imgPath: "/ProjectImgs/VoiceReminder.png",
   },
+
+    {
+    title: "Infinite Canvas Drawing",
+    description:
+      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
+    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
+    openUrl:
+      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
+    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
+    tags: ["React Native", "Typescript", "Drawing"],
+  },
+
+
   {
     title: "PyContextMenu",
     description:
@@ -84,25 +109,6 @@ const projects: ProjectData[] = [
       "Vite",
       "DEV Tool"
     ],
-  },
-  {
-    title: "Infinite Canvas Drawing",
-    description:
-      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
-    imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
-    openUrl:
-      "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
-    gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
-    tags: ["React Native", "Typescript", "Drawing"],
-  },
-
-  {
-    title: "NurseLink",
-    description:
-      "NurseLink é um aplicativo que assiste enfermeiros no tratamento de pacientes com lesão por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões através das imagens.",
-    imgPath: "/ProjectImgs/NurseLink2.jpg",
-    tags: ["Flutter", "Machine Learning", "IA", "Health", "App", "Mobile"],
-    openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
   },
 
 
@@ -211,8 +217,18 @@ export default function Projects() {
     return <Project data={data} root={projectsPage} index={i} key={i} />;
   });
 
+  const { scrollYProgress } = useScroll({
+    target: projectsPage,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.9, 1], ["100%", "100%", "0%"]);
+
   return (
-    <div ref={projectsPage}>
+    <motion.section 
+
+      style={{ opacity}}
+      ref={projectsPage}>
       <div className={styles.projectsPage} id="projects">
         <div ref={projectWrapper} className={styles.projectsWrapper}>
           <div className={styles.jsxTag}>
@@ -230,7 +246,7 @@ export default function Projects() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 }
 
@@ -268,15 +284,19 @@ function Project({
     ["0%", "100%", "100%", "0%"],
   );
 
+  const y = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -300]), 
+{damping: 10, stiffness: 100, mass: 1}
+);
+
   const aboutRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (aboutRef.current) {
-      requestAnimationFrame(() => {
-        aboutRef.current?.scrollTo({ top: 0, behavior: "auto" });
-      });
-    }
-  }, []);
+  // useLayoutEffect(() => {
+  //   if (aboutRef.current) {
+  //     requestAnimationFrame(() => {
+  //       aboutRef.current?.scrollTo({ top: 0, behavior: "auto" });
+  //     });
+  //   }
+  // }, []);
 
   const get_img_orientation = async (imgPath: string) => {
     return new Promise((resolve, reject) => {
@@ -307,6 +327,7 @@ function Project({
       ref={ref}
       style={{
         opacity,
+        y
       }}
     >
       

@@ -7,7 +7,7 @@
     padding: 0;
     overflow-x: clip;
     scroll-snap-align: none !important;
-    margin-bottom: 20svh;
+    margin-bottom: calc(40 * var(--vh, 1vh));
 }
 .jsxTag {
     user-select: none;
@@ -52,23 +52,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 70vmin;
+    min-height: calc(70 * var(--vh, 1vh));
     width: 90vw;
     /* background-color: rgb(125, 87, 205); */
     font-size: 2.5vmin;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    height: 100svh;
+    height: calc(100 * var(--vh, 1vh));
+    
 }
 
 .project:first-of-type {
-    margin-top: 4svh;
+    margin-top: calc(4 * var(--vh, 1vh));
 }
 .project:first-of-type,
 .project:last-of-type {
     scroll-snap-align: none !important;
     scroll-snap-stop: normal !important;
-    height: calc(100svh - 12vmin);
+    height: calc(88 * var(--vh, 1vh));
 }
 
 /* .project:first-of-type .imgContainer,
@@ -87,7 +88,7 @@
     place-items: center;
     place-content: center;
     width: 100%;
-    min-height: 70vh;
+    min-height: calc(70 * var(--vh, 1vh));
     text-align: center;
     background-color: rgba(8, 8, 8, 0);
     z-index: 100;
@@ -115,13 +116,13 @@
     max-width: 70%;
 }
 .img.portrait {
-    max-height: 60vh;
+    max-height: calc(60 * var(--vh, 1vh));
     width: auto;
     height: 100%;
 
 }
 .img.landscape {
-    max-height: 50vh;
+    max-height: calc(50 * var(--vh, 1vh));
     height: auto;
 
 }
@@ -236,7 +237,7 @@
         grid-template-rows: max-content max-content max-content;
     } */
     .about {
-        margin-top: 5vmin;
+        margin-top: calc(5 * var(--vh, 1vh));
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0;
@@ -249,7 +250,7 @@
         max-width: 90vw;
     }
     .img.portrait {
-        height: 50vh;
+        height: calc(50 * var(--vh, 1vh));
     }
     .img.landscape {
         max-width: 90vw;

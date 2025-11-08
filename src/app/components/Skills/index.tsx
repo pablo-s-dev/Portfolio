@@ -2,12 +2,6 @@
 import styles from "./Skills.module.css";
 import skillData from "./skillData.json";
 
-function shuffle(array: string[]) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-
-
 export default function Skills() {
 
   const { firstRowSkills, secondRowSkills } = skillData;

@@ -8,7 +8,7 @@
 
 .skillsPage {
     display: flex;
-    height: 100svh;
+    min-height: calc(97* var(--vh, 1vh));
     flex-direction: column;
     justify-content: space-between;
     padding: 2vmin 10vmin;
@@ -45,10 +45,11 @@
     animation: goRight 40s linear infinite;
 }
 
-.skillsWrapper:hover .skillset {
-    animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+    .skillsWrapper:hover .skillset {
+        animation-play-state: paused;
+    }
 }
-
 
 
 .skill {
@@ -63,15 +64,19 @@
     background-color: rgb(20, 20, 20);
     transform: translate3d(0, 0, 0);
     border-radius: 15px;
+    transition: all 0.2s ease;
 }
 .skill img {
     width: 7vmin;
     /* transition: all 0.2s ease-in-out; */
 }
 .skill:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     /* order: -2; */
 }
+
+
+
 .skillsContainer {
     display: flex;
     flex-direction: column;

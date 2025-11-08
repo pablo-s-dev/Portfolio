@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "../Navbar";
 import styles from "./welcome.module.css";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import React from "react";
 
 export default function Welcome() {
@@ -30,23 +30,29 @@ export default function Welcome() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end start"],
   });
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.7, 1],
-    ["0%", "100%", "50%", "0%"],
+    [0, 1],
+    ["100%", "0%"],
   );
+
+  const yOffset = useSpring( useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -400],
+  ), );
 
   return (
     <motion.section
       className={styles.welcome}
-      id="home"
+      id="home" 
       ref={ref}
-      style={{ opacity }}
+      style={{ opacity, y: yOffset }}
     >
-      <Navbar />
+      
 
       <div className={styles.contentWrapper}>
         <motion.div className={styles.intro}>
@@ -61,7 +67,7 @@ export default function Welcome() {
           <Pic />
         </motion.div>
       </div>
-      <div className={styles.contact_btnWrapper}>
+      {/* <div className={styles.contact_btnWrapper}>
         
         <a
           href="mailto:ps.login.username@gmail.com"
@@ -71,7 +77,7 @@ export default function Welcome() {
           <img src="/email.svg" alt="Email" />
           E-mail
         </a>
-      </div>
+      </div> */}
     </motion.section>
   );
 }
@@ -304,7 +310,7 @@ function Intro() {
 function Pic() {
   return (
     <div className={styles.imgWrapper}>
-      <img src="/ps001.png" alt="Profile" className={styles.img} />
+      <img src="/p-cut.jpg" alt="Profile" className={styles.img} />
       {/* <div className={styles.imgBlur}></div> */}
     </div>
   );

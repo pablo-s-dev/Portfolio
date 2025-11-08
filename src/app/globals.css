@@ -1,7 +1,6 @@
 @font-face {
-    font-family: "inter";
+    font-family: "Inter";
     src: url("/Fonts/Inter.ttf");
-    font-display: block;
 }
 
 * {
@@ -11,6 +10,7 @@
 }
 html {
     --strong-color: #8f98af;
+    --vh: 1svh;
     /* scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     scroll-behavior: smooth;
@@ -18,8 +18,7 @@ html {
 }
 
 body {
-    font-family: "inter";
-    font-display: block;
+    font-family: "Inter";
     color: whitesmoke;
     overflow-y: auto;
     overflow-x: clip;
@@ -27,6 +26,7 @@ body {
     --thumbBG: #ffffff;
     opacity: 0;
     transition: opacity 0.5s;
+    background-color: #101010;
 }
 
 .font-loaded body {
