@@ -7,7 +7,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	width: 100svw;
 	z-index: 1000;
 	background-color: rgba(46, 46, 46, 0.123);
 	backdrop-filter: blur(10px);
@@ -22,7 +22,8 @@
 	aspect-ratio: 20/9;
 	cursor: pointer;
 	user-select: none;
-
+	width: 100px;
+  min-width: max-content;
 	border-bottom: 2px rgba(226, 64, 177, 0) solid;
 }
 .navbar_btn:hover {
