@@ -284,9 +284,7 @@ function Project({
     ["0%", "100%", "100%", "0%"],
   );
 
-  const y = useSpring(useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -300]), 
-{damping: 10, stiffness: 100, mass: 1}
-);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -300]);
 
   const aboutRef = useRef<HTMLDivElement>(null);
 
