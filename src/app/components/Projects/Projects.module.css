@@ -15,7 +15,7 @@
 }
 .jsxTag h1 {
     text-align: center;
-    font-size: 5vmin;
+    font-size: calc(5 * var(--vmin, 1vmin));
 }
 /* .jsxTag:last-of-type {
     scroll-snap-align: end;
@@ -55,7 +55,7 @@
     min-height: calc(70 * var(--vh, 1vh));
     width: 90vw;
     /* background-color: rgb(125, 87, 205); */
-    font-size: 2.5vmin;
+    font-size: calc(2.5 * var(--vmin, 1vmin));
     scroll-snap-align: center;
     scroll-snap-stop: always;
     height: calc(100 * var(--vh, 1vh));
@@ -97,6 +97,10 @@
 .card_title {
     padding: 5vmin 0;
     grid-area: title;
+    font-size: calc(4.5 * var(--vmin, 1vmin));
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: calc(2 * var(--vh, 1vh));
 }
 
 .imgContainer {
@@ -147,13 +151,13 @@
     font-size: 0.7rem;
     text-rendering: optimizeLegibility;
     text-wrap: balance;
-    gap: 2vmin;
+    gap: calc(2 * var(--vmin, 1vmin));
     line-height: 150%;
     max-height: 100%;
     transform: translate3d(0, 0, 0);
     /* overflow-y: auto; */
     max-width: 90%;
-    padding: 5vmin 0;
+    padding: calc(5 * var(--vmin, 1vmin)) 0;
     min-height: max-content;
 }
 
@@ -181,7 +185,7 @@
     align-items: flex-end;
     justify-content: center;
     gap: min(3vmin, 8px);
-    padding-right: 2vmin;
+    padding-right: calc(2 * var(--vmin, 1vmin));
     width: 100%;
 }
 

@@ -67,7 +67,7 @@ function Skill({ skillName }: { skillName: string }) {
     <div className={styles.skill}>
       <BreakWords text={skillName} />
       <div className={styles.icon}>
-        <Image src={`/Skills/${skillName}.svg`} alt={skillName} fill  />
+        <Image src={`/Skills/${skillName}.svg`} alt={skillName} fill loading="eager"/>
       </div>
     </div>
   );

@@ -102,8 +102,8 @@
 
 .img {
   display: block;
-  width: min(calc(10rem + 12vmin), calc(60 * var(--vh, 1vh)));
-  height: min(calc(12rem + 12vmin), calc(60 * var(--vh, 1vh)));
+  width: min(calc(10rem + calc(12 * var(--vmin, 1vmin))), calc(60 * var(--vh, 1vh)));
+  height: min(calc(12rem + calc(12 * var(--vmin, 1vmin))), calc(60 * var(--vh, 1vh)));
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
@@ -189,8 +189,8 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        gap: 5vmin;
-        padding: 5vmin 0;
+        gap: calc(5 * var(--vmin, 1vmin));
+        padding: calc(5 * var(--vmin, 1vmin)) 0;
     }
     /* .pic {
 		height: 60vmin;

@@ -3,7 +3,7 @@
     z-index: 200;
 }
 .tag h1 {
-    font-size: 5vmin;
+    font-size: calc(5 * var(--vmin, 1vmin));
 }
 
 .skillsPage {
@@ -11,7 +11,7 @@
     min-height: calc(86* var(--vh, 1vh));
     flex-direction: column;
     justify-content: space-between;
-    padding: 2vmin 10vmin;
+    padding: calc(2 * var(--vmin, 1vmin)) calc(10 * var(--vmin, 1vmin));
     max-width: 100%;
     overflow: hidden;
     text-align: center;
@@ -33,8 +33,8 @@
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
-    padding: 2vmin 2vmin;
-    gap: 4vmin;
+    padding: calc(2 * var(--vmin, 1vmin));
+    gap: calc(4 * var(--vmin, 1vmin));
     transform: translate3d(0, 0, 0);
 }
 
@@ -59,7 +59,7 @@
     text-align: center;
     align-items: center;
     width: min-content;
-    height: 25vmin;
+    height: calc(25 * var(--vmin, 1vmin));
     aspect-ratio: 1;
     background-color: rgb(20, 20, 20);
     transform: translate3d(0, 0, 0);
@@ -69,8 +69,8 @@
 
 .skill .icon {
   position: relative;
-  width: 7vmin;
-  height: 7vmin;
+  width: calc(7 * var(--vmin, 1vmin));
+  height: calc(7 * var(--vmin, 1vmin));
 }
 .skill .icon img {
   object-fit: contain;

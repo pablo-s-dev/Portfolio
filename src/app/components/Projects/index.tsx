@@ -332,12 +332,7 @@ function Project({
       <div className={styles.card}>
         <h1
         className={styles.card_title}
-        style={{
-          fontSize: "4.5vmin",
-          fontWeight: "bold",
-          marginBottom: "1vmin",
-          textAlign: "center",
-        }}
+
       >
         {data.title}
       </h1>
@@ -346,7 +341,7 @@ function Project({
           src={data.imgPath}
           className={`${styles.img} ${styles[orientation]}`}
           // increase quality
-          loading="lazy"
+          loading="eager"
           alt={data.title}
         />
         {/* </div> */}
