@@ -274,14 +274,14 @@ function Project({
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["end end", "end start"],
   });
 
   // const y = useTransform(scrollYProgress, [0, 1], ["15vmin", "-15vmin"])
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.7, 1],
-    ["0%", "100%", "100%", "0%"],
+    [0, 0.5, 1],
+    ["100%", "100%", "0%"],
   );
 
   const y = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -300]);
