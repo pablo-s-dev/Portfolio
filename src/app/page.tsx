@@ -18,7 +18,7 @@ function adjustViewportHeight(): void {
   const vmax = Math.round(Math.max(width, height) * 0.01);
   const vh   = Math.round(height * 0.01);
 
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty('--s', `${vh}px`);
   document.documentElement.style.setProperty('--vmin', `${vmin}px`);
   document.documentElement.style.setProperty('--vmax', `${vmax}px`);
 }
@@ -34,7 +34,7 @@ export default function Home() {
 
     if (typeof window !== "undefined") {
       
-      adjustViewportHeight();
+      // adjustViewportHeight();
       // window.addEventListener("resize", adjustViewportHeight);
 
     }

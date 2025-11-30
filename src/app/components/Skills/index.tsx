@@ -9,7 +9,7 @@ export default function Skills() {
     <section className={styles.skillsPage} id="skills">
       <div className={styles.tag}>
         <h1>
-          <strong>{"<Habilidades>"}</strong>
+          {"<"}<strong>{" Habilidades "}</strong>{">"}
         </h1>
       </div>
 
@@ -43,7 +43,7 @@ export default function Skills() {
 
       <div className={styles.tag}>
         <h1>
-          <strong>{"</Habilidades>"}</strong>
+          {"</"}<strong>{" Habilidades "}</strong>{">"}
         </h1>
       </div>
     </section>

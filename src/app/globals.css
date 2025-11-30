@@ -10,11 +10,7 @@
 }
 html {
     --strong-color: #8f98af;
-    --vh: 1svh;
-    /* scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
-    scroll-behavior: smooth;
-    scroll-initial-target: nearest; */
+    --s: 7px;
 }
 
 body {
@@ -27,6 +23,7 @@ body {
     opacity: 0;
     transition: opacity 0.5s;
     background-color: #101010;
+    scroll-behavior: smooth;
 }
 
 .font-loaded body {
@@ -41,7 +38,7 @@ a {
 strong {
     color: var(--strong-color);
 }
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     html {
         scroll-snap-type: none;
         scroll-snap-stop: normal;
@@ -53,13 +50,13 @@ strong {
         scroll-snap-stop: normal !important;
         scroll-behavior: auto !important;
     }
-}
-.no-scroll-snap {
+} */
+/* .no-scroll-snap {
     scroll-snap-type: none !important;
     scroll-snap-stop: normal !important;
     scroll-behavior: auto !important;
     scroll-snap-align: none !important;
-}
+} */
 *::-webkit-scrollbar {
     width: 11px;
 }

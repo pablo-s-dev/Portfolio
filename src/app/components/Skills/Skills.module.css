@@ -3,20 +3,22 @@
     z-index: 200;
 }
 .tag h1 {
-    font-size: calc(5 * var(--vmin, 1vmin));
+    font-size: 2rem;
+    color: rgb(121, 121, 121);
 }
 
 .skillsPage {
     display: flex;
-    min-height: calc(86* var(--vh, 1vh));
     flex-direction: column;
-    justify-content: space-between;
-    padding: calc(2 * var(--vmin, 1vmin)) calc(10 * var(--vmin, 1vmin));
+    gap: 32px;
+    padding: 10px 10vw;
     max-width: 100%;
     overflow: hidden;
     text-align: center;
-    scroll-snap-align: start;
     overflow-x: hidden;
+    scroll-snap-align: center;
+
+    
 }
 .skillsWrapper {
     display: flex;
@@ -24,6 +26,7 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     width: 100%;
+
     overflow: hidden;
 }
 
@@ -33,23 +36,24 @@
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
-    padding: calc(2 * var(--vmin, 1vmin));
-    gap: calc(4 * var(--vmin, 1vmin));
+    padding: 10px;
+    gap: 20px;
     transform: translate3d(0, 0, 0);
+    text-rendering: optimizeLegibility;
 }
 
 .skillsWrapper:nth-child(odd) .skillset {
-    animation: goLeft 40s linear infinite;
+    animation: goLeft 20s linear forwards infinite;
 }
 .skillsWrapper:nth-child(even) .skillset {
-    animation: goRight 40s linear infinite;
+    animation: goRight 20s linear forwards infinite;
 }
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
     .skillsWrapper:hover .skillset {
         animation-play-state: paused;
     }
-}
+} */
 
 
 .skill {
@@ -59,18 +63,22 @@
     text-align: center;
     align-items: center;
     width: min-content;
-    height: calc(25 * var(--vmin, 1vmin));
+    height: 170px;
     aspect-ratio: 1;
     background-color: rgb(20, 20, 20);
     transform: translate3d(0, 0, 0);
     border-radius: 15px;
     transition: all 0.2s ease;
+    padding: 10px;
+    gap: 10px;
+    color: rgb(194, 194, 194);
 }
 
 .skill .icon {
   position: relative;
-  width: calc(7 * var(--vmin, 1vmin));
-  height: calc(7 * var(--vmin, 1vmin));
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 .skill .icon img {
   object-fit: contain;
@@ -86,7 +94,7 @@
 .skillsContainer {
     display: flex;
     flex-direction: column;
-    gap: 0vmin;
+    gap: 10px;
 }
 
 
@@ -122,5 +130,41 @@
     }
     100% {
         transform: translateY(-100%);
+    }
+}
+
+
+@media screen  and (max-width: 700px) {
+   .tag h1 {
+       font-size: 1.5rem;
+   }
+   .skill {
+    font-size: 0.5rem;
+    font-weight: 100;
+   }
+   .skill {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+        width: min-content;
+        height: 100px;
+        aspect-ratio: 1;
+        background-color: rgb(20, 20, 20);
+        transform: translate3d(0, 0, 0);
+        border-radius: 15px;
+        transition: all 0.2s ease;
+        padding: 10px;
+        gap: 10px;
+        font-size: 0.8rem;
+
+    }
+
+    .skill .icon {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
     }
 }

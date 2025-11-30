@@ -1,4 +1,5 @@
-import SocialMediaBtns from '../SocialMediaBtns';
+import GithubBtn from './githubBtn';
+import LinkedinBtn from './linkedinBtn';
 import styles from './navbar.module.css'
 
 export default function Navbar() {
@@ -6,6 +7,12 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navbar}>
+
+            <div className={styles.left + " " + styles.social}>
+                <LinkedinBtn />
+
+             </div>
+            
 
             {/* <Name /> */}
             <div className={styles.routingBtnsContainer}>
@@ -21,7 +28,10 @@ export default function Navbar() {
                     <NavbarButton>Habilidades</NavbarButton>
                 </a>
 
-                <SocialMediaBtns />
+                
+            </div>
+            <div className={styles.right + " " + styles.social}>
+                <GithubBtn />
             </div>
             {/* <SocialMediaIcons /> */}
 

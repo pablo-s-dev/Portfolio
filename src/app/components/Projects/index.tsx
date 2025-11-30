@@ -233,7 +233,7 @@ export default function Projects() {
         <div ref={projectWrapper} className={styles.projectsWrapper}>
           <div className={styles.jsxTag}>
             <h1>
-              <strong>{"<Projetos>"}</strong>
+              {"<"}<strong>{" Projetos "}</strong>{">"}
             </h1>
           </div>
 
@@ -241,7 +241,7 @@ export default function Projects() {
 
           <div className={styles.jsxTag}>
             <h1>
-              <strong>{"</Projetos>"}</strong>
+              {"</"}<strong>{" Projetos "}</strong>{">"}
             </h1>
           </div>
         </div>
