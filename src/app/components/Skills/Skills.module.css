@@ -26,8 +26,9 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     width: 100%;
-
     overflow: hidden;
+    contain: content;
+    
 }
 
 .skillset {
@@ -40,13 +41,16 @@
     gap: 20px;
     transform: translate3d(0, 0, 0);
     text-rendering: optimizeLegibility;
+
 }
 
 .skillsWrapper:nth-child(odd) .skillset {
     animation: goLeft 20s linear forwards infinite;
+    will-change: transform;
 }
 .skillsWrapper:nth-child(even) .skillset {
     animation: goRight 20s linear forwards infinite;
+    will-change: transform;
 }
 
 /* @media (hover: hover) and (pointer: fine) {
