@@ -8,47 +8,63 @@ import {
   useRef,
   useState,
 } from "react";
+import {
+  getLocalizedText,
+  Language,
+  LocalizedText,
+  localizeTag,
+  useI18n,
+} from "../../i18n";
 
 const projects: ProjectData[] = [
 
   {
     title: "Hearken",
-    description:
-      "Hearken é uma plataforma de aprendizado de idiomas usando vídeos do YouTube. Você pode escolher um vídeo que tenha legenda no seu idioma alvo, para ser desafiado a entender cada frase. Em seguida, você será solicitado a falar ou digitar o que foi dito.",
+    description: {
+      pt: "Hearken é uma plataforma de aprendizado de idiomas usando vídeos do YouTube. Você pode escolher um vídeo com legenda no seu idioma alvo para ser desafiado a entender cada frase. Em seguida, você fala ou digita o que foi dito.",
+      en: "Hearken is a language learning platform built around YouTube videos. You can choose a video with captions in your target language, then challenge yourself to understand each sentence by speaking or typing what was said.",
+      es: "Hearken es una plataforma de aprendizaje de idiomas basada en videos de YouTube. Puedes elegir un video con subtítulos en tu idioma objetivo y desafiarte a entender cada frase hablando o escribiendo lo que se dijo.",
+    },
     imgPath: "/ProjectImgs/hearken-s1.png",
     openUrl: "https://hearken.netlify.app/",
     tags: [
-      "Javascript",
+      "JavaScript",
       "Vanilla",
       "CSS",
       "HTML",
-      "Language Learning",
-      "Website",
+      "Aprendizado de Idiomas",
+      "Site",
       "Web",
-      "Education",
-      "Learning",
+      "Educação",
+      "Aprendizado",
     ],
   },
   
   {
     title: "NurseLink",
-    description:
-      "NurseLink é um aplicativo que assiste enfermeiros no tratamento de pacientes com lesão por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões através das imagens.",
+    description: {
+      pt: "NurseLink é um aplicativo que auxilia enfermeiros no tratamento de pacientes com lesões por pressão. Ele utiliza inteligência artificial para classificar o estágio das lesões por imagens.",
+      en: "NurseLink is an app that helps nurses treat patients with pressure injuries. It uses artificial intelligence to classify injury stages from images.",
+      es: "NurseLink es una aplicación que ayuda a enfermeros a tratar pacientes con lesiones por presión. Usa inteligencia artificial para clasificar el estadio de las lesiones a partir de imágenes.",
+    },
     imgPath: "/ProjectImgs/NurseLink2.jpg",
-    tags: ["Flutter", "Machine Learning", "IA", "Health", "App", "Mobile"],
+    tags: ["Flutter", "Machine Learning", "IA", "Saúde", "App", "Mobile"],
     openUrl: "https://play.google.com/store/apps/details?id=com.carelink.app",
   },
 
   {
     title: "Tindog",
-    description:
-      "Tindog é um app da ONG ARCA que facilita adoção, doação e busca por pets desaparecidos. Usa IA para classificar posts e detectar cães e gatos em imagens.",
+    description: {
+      pt: "Tindog é um app da ONG ARCA que facilita adoção, doação e busca por pets desaparecidos. Usa IA para classificar posts e detectar cães e gatos em imagens.",
+      en: "Tindog is an app for ARCA, an NGO, that supports adoption, donations, and searches for missing pets. It uses AI to classify posts and detect dogs and cats in images.",
+      es: "Tindog es una aplicación de la ONG ARCA que facilita adopciones, donaciones y búsquedas de mascotas desaparecidas. Usa IA para clasificar publicaciones y detectar perros y gatos en imágenes.",
+    },
     imgPath: "/ProjectImgs/tindog-2.jpeg",
     tags: [
       "Flutter",
       "Python",
       "IA",
-      "Machine Leaning",
+      "Machine Learning",
       "ONG",
       "Flask",
       "Firebase",
@@ -59,46 +75,60 @@ const projects: ProjectData[] = [
 
   {
     title: "Voice Reminder — Keep Focus",
-    description: "A Chrome extension that delivers custom voice reminders at regular intervals to help you stay focused.",
+    description: {
+      pt: "Voice Reminder — Keep Focus é uma extensão do Chrome que envia lembretes de voz personalizados em intervalos regulares para ajudar você a manter o foco.",
+      en: "Voice Reminder — Keep Focus is a Chrome extension that delivers custom voice reminders at regular intervals to help you stay focused.",
+      es: "Voice Reminder — Keep Focus es una extensión de Chrome que reproduce recordatorios de voz personalizados en intervalos regulares para ayudarte a mantener el enfoque.",
+    },
     gitUrl: "https://github.com/pablo-s-dev/voice-reminder",
     openUrl: "https://chromewebstore.google.com/detail/mldkadifcljcmkkjbgcchghmkhcanlie?utm_source=item-share-cb",
     tags: [
-      "Javascript",
-      "Chrome Extension",
+      "JavaScript",
+      "Extensão Chrome",
       "Web",
-      "Education",
-      "Productivity",
-      "Focus",
+      "Educação",
+      "Produtividade",
+      "Foco",
     ],
     imgPath: "/ProjectImgs/VoiceReminder.png",
   },
 
     {
     title: "Infinite Canvas Drawing",
-    description:
-      "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito, ou seja, pode-se dar zoom ou navegar infinitamente pelo canvas. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo tape a visão do desenho que está surgindo.",
+    description: {
+      pt: "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito: você pode dar zoom e navegar pelo canvas livremente. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo cubra a visão do desenho.",
+      en: "Infinite Canvas Drawing is a drawing app with an infinite canvas, so you can zoom and navigate freely. It also includes a pointer mode that lets you draw without your finger covering the drawing.",
+      es: "Infinite Canvas Drawing es una aplicación de dibujo con canvas infinito, por lo que puedes hacer zoom y navegar libremente. También incluye un modo puntero para dibujar sin que el dedo cubra la vista del dibujo.",
+    },
     imgPath: "/ProjectImgs/InfiniteCanvasDrawing2.jpg",
     openUrl:
       "https://play.google.com/store/apps/details?id=com.PabloS.InfiniteCanvas",
     gitUrl: "https://github.com/pablo-s-dev/InfiniteCanvas",
-    tags: ["React Native", "Typescript", "Drawing"],
+    tags: ["React Native", "TypeScript", "Desenho"],
   },
 
 
   {
     title: "PyContextMenu",
-    description:
-      "O PyContextMenu facilita a adição de scripts Python ao menu de contexto do Windows (menu do botão direito) para arquivos, pastas e o plano de fundo.",
+    description: {
+      pt: "PyContextMenu facilita a adição de scripts Python ao menu de contexto do Windows para arquivos, pastas e o plano de fundo.",
+      en: "PyContextMenu makes it easier to add Python scripts to the Windows context menu for files, folders, and the background.",
+      es: "PyContextMenu facilita agregar scripts Python al menú contextual de Windows para archivos, carpetas y el fondo.",
+    },
     imgPath: "/ProjectImgs/pycontextmenu_smooth.png",
     gitUrl: "https://github.com/pablo-s-dev/PyContextMenu",
     tags: [
       "Python",
-      "DEV Tool"
+      "Ferramenta DEV"
     ],
   },
   {
     title: "Dev Create App",
-    description: 'Dev Create App — a lightweight Windows CLI that scaffolds Python, Node.js, or Vite projects in seconds: run "dev", pick options, and it creates files, opens your editor, and starts the dev server.',
+    description: {
+      pt: 'Dev Create App é uma CLI leve para Windows que cria projetos Python, Node.js ou Vite em segundos: execute "dev", escolha as opções, e ela cria os arquivos, abre o editor e inicia o servidor de desenvolvimento.',
+      en: 'Dev Create App is a lightweight Windows CLI that scaffolds Python, Node.js, or Vite projects in seconds: run "dev", pick options, and it creates files, opens your editor, and starts the dev server.',
+      es: 'Dev Create App es una CLI ligera para Windows que crea proyectos Python, Node.js o Vite en segundos: ejecuta "dev", elige las opciones, y crea los archivos, abre el editor e inicia el servidor de desarrollo.',
+    },
     imgPath: "/ProjectImgs/dev.png",
     gitUrl: "https://github.com/pablo-s-dev/dev-create-app",
     tags: [
@@ -107,22 +137,25 @@ const projects: ProjectData[] = [
       "Python",
       "Node.js",
       "Vite",
-      "DEV Tool"
+      "Ferramenta DEV"
     ],
   },
 
 
   {
     title: "Poliprocess",
-    description:
-      "Poliprocess é um website de uma ideia de negócio de venda de polímeros triturados. Esse website foi feito em NextJS, Typescript e Tailwind CSS.",
+    description: {
+      pt: "Poliprocess é um site para uma ideia de negócio de venda de polímeros triturados. O projeto foi feito com Next.js, TypeScript e Tailwind CSS.",
+      en: "Poliprocess is a website for a business idea focused on selling shredded polymers. The project was built with Next.js, TypeScript, and Tailwind CSS.",
+      es: "Poliprocess es un sitio web para una idea de negocio centrada en la venta de polímeros triturados. El proyecto fue hecho con Next.js, TypeScript y Tailwind CSS.",
+    },
     imgPath: "/ProjectImgs/PoliprocessDesktop.png",
     gitUrl: "https://github.com/pablo-s-dev/Poliprocess",
     openUrl: "https://poliprocess.netlify.app/",
     tags: [
       "React",
-      "NextJS",
-      "Typescript",
+      "Next.js",
+      "TypeScript",
       "Tailwind CSS",
       "Venda",
       "Negócio",
@@ -133,21 +166,24 @@ const projects: ProjectData[] = [
 
   {
     title: "Youtube ActiveStudy with AI",
-    description:
-      "Youtube ActiveStudy with AI é uma extensão para navegadores Chromium, capaz de gerar um quiz interativo utlizando as legendas do vídeo que está sendo assistido, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial da OpenAI.",
+    description: {
+      pt: "YouTube ActiveStudy with AI é uma extensão para navegadores Chromium capaz de gerar um quiz interativo utilizando as legendas do vídeo em reprodução, possibilitando um estudo ativo do conteúdo. As perguntas e respostas são geradas pela inteligência artificial da OpenAI.",
+      en: "YouTube ActiveStudy with AI is an extension for Chromium browsers that can generate an interactive quiz from the captions of the video you are watching, enabling active study of the content. The questions and answers are generated by OpenAI artificial intelligence.",
+      es: "YouTube ActiveStudy with AI es una extensión para navegadores Chromium capaz de generar un quiz interactivo a partir de los subtítulos del video en reproducción, lo que permite estudiar el contenido de forma activa. Las preguntas y respuestas son generadas por la inteligencia artificial de OpenAI.",
+    },
     imgPath: "/ProjectImgs/Youtube-ActiveStudy-with-AI-screen.png",
     // openUrl:
     //   "https://chrome.google.com/webstore/detail/comfpjldlolnaalknabmalgfdjfghedi?authuser=1&hl=pt-BR",
     tags: [
-      "Javascript",
+      "JavaScript",
       "Vanilla",
       "CSS",
       "HTML",
-      "Learning",
-      "Extension",
+      "Aprendizado",
+      "Extensão",
       "Web",
-      "Education",
-      "AI",
+      "Educação",
+      "IA",
       "Machine Learning",
       "OpenAI",
       "GPT",
@@ -161,22 +197,25 @@ const projects: ProjectData[] = [
   //   gitUrl: "https://github.com/pablo-s-dev/Guess-the-word",
   //   openUrl: "https://guessword.netlify.app/",
   //   tags: [
-  //     "Javascript",
+  //     "JavaScript",
   //     "Vanilla",
   //     "CSS",
   //     "HTML",
-  //     "Language Learning",
-  //     "Website",
+  //     "Aprendizado de Idiomas",
+  //     "Site",
   //     "Web",
-  //     "Education",
-  //     "Learning",
+  //     "Educação",
+  //     "Aprendizado",
   //   ],
   // },
 
   {
     title: "PhasorCalc",
-    description:
-      "PhasorCalc é uma calculadora de fasores, projetada principalmente para facilitar cálculos envolvendo circuitos com corrente alternada, pois essas ondas podem ser representadas como fasores. O app inclui operações de aritmética básica e operações especiais, como paralelo e divisor de corrente/tensão.",
+    description: {
+      pt: "PhasorCalc é uma calculadora de fasores, projetada principalmente para facilitar cálculos envolvendo circuitos com corrente alternada, pois essas ondas podem ser representadas como fasores. O app inclui operações de aritmética básica e operações especiais, como paralelo e divisor de corrente/tensão.",
+      en: "PhasorCalc is a phasor calculator designed mainly to simplify calculations involving alternating current circuits, since those waves can be represented as phasors. The app includes basic arithmetic operations and special operations such as parallel and current/voltage divider.",
+      es: "PhasorCalc es una calculadora de fasores diseñada principalmente para facilitar cálculos con circuitos de corriente alterna, ya que esas ondas pueden representarse como fasores. La app incluye operaciones de aritmética básica y operaciones especiales, como paralelo y divisor de corriente/tensión.",
+    },
     imgPath: "/ProjectImgs/PhasorCalc.jpg",
     openUrl:
       "https://play.google.com/store/apps/details?id=com.psao.phasorcalc",
@@ -201,20 +240,34 @@ const projects: ProjectData[] = [
   // },
   {
     title: "Pong",
-    description: "O clássico jogo de Ping Pong, feito em Java.",
+    description: {
+      pt: "O clássico jogo de Ping Pong, feito em Java.",
+      en: "The classic Ping Pong game, built in Java.",
+      es: "El clásico juego de Ping Pong, hecho en Java.",
+    },
     imgPath: "/ProjectImgs/Pong.jpg",
     gitUrl: "https://github.com/pablo-s-dev/Pong-Java",
     openUrl: "https://github.com/pablo-s-dev/Pong-Java/blob/main/dist/Pong.exe",
-    tags: ["Java", "Jogo", "Game"],
+    tags: ["Java", "Jogo"],
   },
 ];
 
 export default function Projects() {
+  const { language, t } = useI18n();
   const projectWrapper = useRef<HTMLDivElement>(null);
   const projectsPage = useRef<HTMLDivElement>(null);
 
   const projectList = projects.map((data, i) => {
-    return <Project data={data} root={projectsPage} index={i} key={i} />;
+    return (
+      <Project
+        data={data}
+        root={projectsPage}
+        index={i}
+        language={language}
+        tagsLabel={t("projects.tagsLabel")}
+        key={i}
+      />
+    );
   });
 
   const { scrollYProgress } = useScroll({
@@ -233,7 +286,7 @@ export default function Projects() {
         <div ref={projectWrapper} className={styles.projectsWrapper}>
           <div className={styles.jsxTag}>
             <h1>
-              {"<"}<strong>{" Projetos "}</strong>{">"}
+              {"<"}<strong>{` ${t("nav.projects")} `}</strong>{">"}
             </h1>
           </div>
 
@@ -241,7 +294,7 @@ export default function Projects() {
 
           <div className={styles.jsxTag}>
             <h1>
-              {"</"}<strong>{" Projetos "}</strong>{">"}
+              {"</"}<strong>{` ${t("nav.projects")} `}</strong>{">"}
             </h1>
           </div>
         </div>
@@ -252,7 +305,7 @@ export default function Projects() {
 
 type ProjectData = {
   title: string;
-  description: string;
+  description: LocalizedText;
   imgPath: string;
   gitUrl?: string;
   openUrl?: string;
@@ -265,10 +318,14 @@ function Project({
   data,
   root,
   index: projectIdx,
+  language,
+  tagsLabel,
 }: {
   data: ProjectData;
   root: RefObject<HTMLDivElement>;
   index: number;
+  language: Language;
+  tagsLabel: string;
 }) {
   const ref = useRef(null);
 
@@ -312,6 +369,8 @@ function Project({
   };
 
   const [orientation, setOrientation] = useState("landscape");
+  const description = getLocalizedText(data.description, language);
+  const tags = data.tags.map((tag) => localizeTag(tag, language));
 
   useEffect(() => {
     get_img_orientation(data.imgPath).then((orientation: any) => {
@@ -351,8 +410,8 @@ function Project({
           className={styles.about}
           // style={{ y }}
         >
-          <p>{data.description}</p>
-          <p>Tags: {data.tags.join("; ")}</p>
+          <p>{description}</p>
+          <p>{tagsLabel}: {tags.join("; ")}</p>
         </motion.div>
         <div className={styles.btnContainer}>
           <a href={data.openUrl} target="_blank">

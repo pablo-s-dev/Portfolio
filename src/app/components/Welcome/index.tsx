@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import styles from "./welcome.module.css";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import React from "react";
+import { useI18n } from "../../i18n";
 
 export default function Welcome() {
   useEffect(() => {
@@ -33,27 +34,17 @@ export default function Welcome() {
     offset: ["start start", "end start"],
   });
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["100%", "0%"],
-  );
+  const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
-  const yOffset = useSpring( useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -400],
-  ), );
+  const yOffset = useSpring(useTransform(scrollYProgress, [0, 1], [0, -400]));
 
   return (
     <motion.section
       className={styles.welcome}
-      id="home" 
+      id="home"
       ref={ref}
       style={{ opacity, y: yOffset }}
     >
-      
-
       <div className={styles.contentWrapper}>
         <motion.div className={styles.intro}>
           <Intro />
@@ -100,6 +91,8 @@ function Name() {
 // }
 
 function Intro() {
+  const { t } = useI18n();
+
   type TypingTextProps = {
     text: string;
     start?: number | undefined;
@@ -290,18 +283,14 @@ function Intro() {
   return (
     <div className={styles.intro}>
       <div>
-        <h1>Olá, me chamo</h1>
+        <h1>{t("welcome.greeting")}</h1>
         <h1>
           <strong>Pablo Santana.</strong>
         </h1>
-        <h1>Desenvolvedor</h1>
+        <h1>{t("welcome.rolePrefix")}</h1>
         <h1>
-          <strong>Full Stack.</strong>
+          <strong>{t("welcome.roleStrong")}</strong>
         </h1>
-        {/* <TypingEffectBlock timePerChar={80}>
-                    <h1>Desenvolvedor</h1>
-                    <h1><strong>Full Stack.</strong></h1>
-                </TypingEffectBlock> */}
       </div>
     </div>
   );

@@ -1,0 +1,179 @@
+.educationPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100svw;
+  min-height: calc(100svh - 72px);
+  padding: 72px 10vw;
+  overflow: hidden;
+  scroll-margin-top: 72px;
+}
+
+.tag {
+  user-select: none;
+  z-index: 200;
+}
+
+.tag h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(121, 121, 121);
+}
+
+.educationShell {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(18px, 4vw, 48px);
+  width: min(100%, 980px);
+}
+
+.headingIcon {
+  display: grid;
+  place-items: center;
+  width: clamp(74px, 12vw, 128px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(143, 152, 175, 0.22), rgba(78, 204, 163, 0.12)),
+    rgb(20, 20, 20);
+  color: #d9fff1;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
+}
+
+.headingIcon svg {
+  width: 54%;
+  height: 54%;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 28px;
+  width: 1px;
+  background: linear-gradient(
+    rgba(143, 152, 175, 0),
+    rgba(143, 152, 175, 0.7),
+    rgba(143, 152, 175, 0)
+  );
+}
+
+.educationCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 128px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.94);
+  padding: 20px;
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.educationCard:hover {
+  border-color: rgba(143, 152, 175, 0.48);
+  background-color: rgb(24, 24, 24);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: rgba(143, 152, 175, 0.16);
+  color: #c7d2f1;
+}
+
+.cardIcon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.cardContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardContent h2 {
+  color: whitesmoke;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.25;
+}
+
+.cardContent p {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: rgb(190, 190, 190);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.cardContent p svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  color: #88d7c0;
+  margin-top: 1px;
+}
+
+@media screen and (max-width: 700px) {
+  .educationPage {
+    gap: 24px;
+    min-height: calc(100svh - 64px);
+    padding: 56px 18px;
+  }
+
+  .tag h1 {
+    font-size: 1.5rem;
+  }
+
+  .educationShell {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .headingIcon {
+    width: 82px;
+  }
+
+  .timeline {
+    width: 100%;
+  }
+
+  .educationCard {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .cardIcon {
+    width: 48px;
+  }
+
+  .cardIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+}

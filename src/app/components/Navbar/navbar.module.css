@@ -24,10 +24,17 @@
 	aspect-ratio: 30/9;
 	cursor: pointer;
 	user-select: none;
-	width: 100px;
-  min-width: max-content;
+	width: clamp(68px, 17vw, 100px);
+	min-width: 0;
+	padding: 0 4px;
 	border-bottom: 2px rgba(226, 64, 177, 0) solid;
 	transition: all 0.2s ease;
+}
+
+.navbar_btn span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .navbar_btn:hover {
 	/* background-color: rgba(0, 0, 0, 0.133); */
@@ -36,6 +43,18 @@
 	/* border-left: 2px rgba(0, 0, 0, 0.268) solid; */
 	/* transform: scale(1.1); */
 }
+
+.navbar_btn.active {
+	color: whitesmoke;
+	border-bottom-color: var(--strong-color);
+	background-color: rgba(143, 152, 175, 0.12);
+	border-radius: 6px 6px 2px 2px;
+}
+
+.routingBtnsContainer a[aria-current="page"] {
+	color: whitesmoke;
+}
+
 .navbar_btn:active {
 	transform: scale(0.9);
 }
@@ -50,6 +69,7 @@
 	justify-content: space-around;
 	align-items: center;
 	flex: 1;
+	gap: clamp(2px, 1vw, 12px);
 	z-index: 200;
 }
 
@@ -112,4 +132,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media (max-width: 520px) {
+	.navbar {
+		padding: calc(1.5 * var(--s, 1vh)) 6px;
+	}
+
+	.navbar_btn {
+		font-size: 0.76rem;
+		width: clamp(62px, 18vw, 78px);
+	}
+
+	.social svg {
+		width: 24px;
+	}
 }

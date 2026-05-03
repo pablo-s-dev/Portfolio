@@ -1,7 +1,419 @@
 {
+  "skills": [
+    {
+      "title": "Python",
+      "icon": "Python.svg",
+      "text": {
+        "pt": "Automação, APIs, scripts, processamento de dados e experimentos de machine learning.",
+        "en": "Automation, APIs, scripts, data processing, and machine learning experiments.",
+        "es": "Automatización, APIs, scripts, procesamiento de datos y experimentos de machine learning."
+      },
+      "tags": ["Linguagens", "Backend", "Dados"]
+    },
+    {
+      "title": "JavaScript",
+      "icon": "Javascript.svg",
+      "text": {
+        "pt": "Interfaces interativas, comportamento no navegador e lógica de aplicações full stack.",
+        "en": "Interactive interfaces, browser behavior, and full stack application logic.",
+        "es": "Interfaces interactivas, comportamiento en el navegador y lógica de aplicaciones full stack."
+      },
+      "tags": ["Linguagens", "Frontend", "Backend"]
+    },
+    {
+      "title": "TypeScript",
+      "icon": "Typescript.svg",
+      "text": {
+        "pt": "Desenvolvimento frontend e backend tipado, com código React e Node.js mais seguro.",
+        "en": "Typed frontend and backend development with safer React and Node.js code.",
+        "es": "Desarrollo frontend y backend tipado, con código React y Node.js más seguro."
+      },
+      "tags": ["Linguagens", "Frontend", "Backend"]
+    },
+    {
+      "title": "C",
+      "icon": "C.svg",
+      "text": {
+        "pt": "Fundamentos de programação de sistemas, gerenciamento de memória e resolução de problemas de baixo nível.",
+        "en": "Systems programming fundamentals, memory management, and lower-level problem solving.",
+        "es": "Fundamentos de programación de sistemas, gestión de memoria y resolución de problemas de bajo nivel."
+      },
+      "tags": ["Linguagens"]
+    },
+    {
+      "title": "Java",
+      "icon": "Java.svg",
+      "text": {
+        "pt": "Programação orientada a objetos, lógica de aplicações e fundamentos de backend.",
+        "en": "Object-oriented programming, application logic, and backend fundamentals.",
+        "es": "Programación orientada a objetos, lógica de aplicaciones y fundamentos de backend."
+      },
+      "tags": ["Linguagens", "Backend"]
+    },
+    {
+      "title": "HTML5",
+      "icon": "HTML5.svg",
+      "text": {
+        "pt": "Estrutura semântica de páginas e marcação web acessível.",
+        "en": "Semantic page structure and accessible web markup.",
+        "es": "Estructura semántica de páginas y marcado web accesible."
+      },
+      "tags": ["Frontend", "Web"]
+    },
+    {
+      "title": "CSS",
+      "icon": "CSS.svg",
+      "text": {
+        "pt": "Layout responsivo, sistemas de estilos, animações e interfaces bem acabadas.",
+        "en": "Responsive layout, styling systems, animations, and polished interfaces.",
+        "es": "Layout responsivo, sistemas de estilos, animaciones e interfaces bien terminadas."
+      },
+      "tags": ["Frontend", "Web"]
+    },
+    {
+      "title": "React",
+      "icon": "React.svg",
+      "text": {
+        "pt": "Interfaces baseadas em componentes, hooks, gerenciamento de estado e fluxos de web apps.",
+        "en": "Component-driven interfaces, hooks, state management, and web app workflows.",
+        "es": "Interfaces basadas en componentes, hooks, gestión de estado y flujos de web apps."
+      },
+      "tags": ["Frontend", "Web"]
+    },
+    {
+      "title": "React Native",
+      "icon": "React Native.svg",
+      "text": {
+        "pt": "Interfaces mobile multiplataforma usando padrões do React.",
+        "en": "Cross-platform mobile interfaces with React patterns.",
+        "es": "Interfaces mobile multiplataforma con patrones de React."
+      },
+      "tags": ["Mobile", "Frontend"]
+    },
+    {
+      "title": "Next.js",
+      "icon": "Next.js.svg",
+      "text": {
+        "pt": "Aplicações React com roteamento, estratégias de renderização e padrões de deploy em produção.",
+        "en": "React applications with routing, rendering strategies, and production deployment patterns.",
+        "es": "Aplicaciones React con rutas, estrategias de renderizado y patrones de despliegue en producción."
+      },
+      "tags": ["Frontend", "Backend", "Web"]
+    },
+    {
+      "title": "Node.js",
+      "icon": "Node.js.svg",
+      "text": {
+        "pt": "JavaScript no servidor, APIs, ferramentas e serviços backend.",
+        "en": "Server-side JavaScript, APIs, tooling, and backend services.",
+        "es": "JavaScript del lado del servidor, APIs, herramientas y servicios backend."
+      },
+      "tags": ["Backend"]
+    },
+    {
+      "title": "Tailwind",
+      "icon": "Tailwind.svg",
+      "text": {
+        "pt": "Estilização utility-first para implementar interfaces rápidas e consistentes.",
+        "en": "Utility-first styling for fast, consistent interface implementation.",
+        "es": "Estilización utility-first para implementar interfaces rápidas y consistentes."
+      },
+      "tags": ["Frontend"]
+    },
+    {
+      "title": "Bootstrap",
+      "icon": "Bootstrap.svg",
+      "text": {
+        "pt": "Layouts responsivos e componentes comuns de UI para projetos web.",
+        "en": "Responsive layouts and common UI components for web projects.",
+        "es": "Layouts responsivos y componentes comunes de UI para proyectos web."
+      },
+      "tags": ["Frontend"]
+    },
+    {
+      "title": "Flutter",
+      "icon": "Flutter.svg",
+      "text": {
+        "pt": "Desenvolvimento de apps mobile e multiplataforma com UI baseada em widgets.",
+        "en": "Mobile and cross-platform app development with widget-based UI.",
+        "es": "Desarrollo de apps mobile y multiplataforma con UI basada en widgets."
+      },
+      "tags": ["Mobile"]
+    },
+    {
+      "title": "Firebase",
+      "icon": "Firebase.svg",
+      "text": {
+        "pt": "Autenticação, dados em tempo real, hospedagem e serviços gerenciados para apps.",
+        "en": "Authentication, realtime data, hosting, and managed app services.",
+        "es": "Autenticación, datos en tiempo real, hosting y servicios administrados para apps."
+      },
+      "tags": ["Backend", "Cloud", "Dados"]
+    },
+    {
+      "title": "SQL",
+      "icon": "SQL.svg",
+      "text": {
+        "pt": "Consultas relacionais, modelagem de esquemas, filtros, joins e fundamentos de bancos de dados.",
+        "en": "Relational querying, schema thinking, filtering, joins, and database fundamentals.",
+        "es": "Consultas relacionales, modelado de esquemas, filtros, joins y fundamentos de bases de datos."
+      },
+      "tags": ["Dados", "Backend"]
+    },
+    {
+      "title": "Postgres",
+      "icon": "Postgres.svg",
+      "text": {
+        "pt": "Modelagem de bancos relacionais, consultas SQL, índices e persistência confiável.",
+        "en": "Relational database design, SQL queries, indexes, and reliable persistence.",
+        "es": "Diseño de bases de datos relacionales, consultas SQL, índices y persistencia confiable."
+      },
+      "tags": ["Dados", "Backend"]
+    },
+    {
+      "title": "Prisma",
+      "icon": "Prisma.svg",
+      "text": {
+        "pt": "Acesso tipado a banco de dados, modelagem de schema, migrations e camadas de dados em aplicações.",
+        "en": "Type-safe database access, schema modeling, migrations, and application data layers.",
+        "es": "Acceso tipado a bases de datos, modelado de schemas, migrations y capas de datos en aplicaciones."
+      },
+      "tags": ["Backend", "Dados"]
+    },
+    {
+      "title": "AWS",
+      "icon": "aws.svg",
+      "text": {
+        "pt": "Fundamentos de infraestrutura em cloud, serviços, deploy e hospedagem de aplicações.",
+        "en": "Cloud infrastructure basics, services, deployment, and application hosting.",
+        "es": "Fundamentos de infraestructura en cloud, servicios, despliegue y hosting de aplicaciones."
+      },
+      "tags": ["Cloud", "DevOps"]
+    },
+    {
+      "title": "GCP",
+      "icon": "GCP.svg",
+      "text": {
+        "pt": "Serviços Google Cloud, infraestrutura gerenciada e fluxos de deploy.",
+        "en": "Google Cloud services, managed infrastructure, and deployment workflows.",
+        "es": "Servicios de Google Cloud, infraestructura administrada y flujos de despliegue."
+      },
+      "tags": ["Cloud", "DevOps"]
+    },
+    {
+      "title": "Cloudflare",
+      "icon": "Cloudflare.svg",
+      "text": {
+        "pt": "Rede de borda, DNS, proteção, cache e fluxos modernos de deploy.",
+        "en": "Edge networking, DNS, protection, caching, and modern deployment workflows.",
+        "es": "Red de borde, DNS, protección, caché y flujos modernos de despliegue."
+      },
+      "tags": ["Cloud", "DevOps", "Web"]
+    },
+    {
+      "title": "Ansible",
+      "icon": "Ansible.svg",
+      "text": {
+        "pt": "Automação de infraestrutura, configuração de servidores, provisionamento repetível e playbooks.",
+        "en": "Infrastructure automation, server configuration, repeatable provisioning, and playbooks.",
+        "es": "Automatización de infraestructura, configuración de servidores, aprovisionamiento repetible y playbooks."
+      },
+      "tags": ["DevOps"]
+    },
+    {
+      "title": "Terraform",
+      "icon": "Terraform.svg",
+      "text": {
+        "pt": "Infraestrutura como código, recursos em cloud, ambientes repetíveis e provisionamento.",
+        "en": "Infrastructure as code, cloud resources, repeatable environments, and provisioning.",
+        "es": "Infraestructura como código, recursos en cloud, entornos repetibles y aprovisionamiento."
+      },
+      "tags": ["DevOps", "Cloud"]
+    },
+    {
+      "title": "Tauri",
+      "icon": "Tauri.svg",
+      "text": {
+        "pt": "Apps desktop leves usando interfaces web e integração nativa com o sistema.",
+        "en": "Lightweight desktop apps using web interfaces and native system integration.",
+        "es": "Apps desktop ligeras usando interfaces web e integración nativa con el sistema."
+      },
+      "tags": ["Desktop", "Mobile"]
+    },
+    {
+      "title": "Arduino",
+      "icon": "Arduino.svg",
+      "text": {
+        "pt": "Projetos com microcontroladores, sensores, prototipagem embarcada e interação com hardware.",
+        "en": "Microcontroller projects, sensors, embedded prototyping, and hardware interaction.",
+        "es": "Proyectos con microcontroladores, sensores, prototipado embebido e interacción con hardware."
+      },
+      "tags": ["Hardware"]
+    },
+    {
+      "title": "FPGA",
+      "icon": "FPGA.svg",
+      "text": {
+        "pt": "Projeto de lógica digital, hardware configurável, circuitos paralelos e arquitetura de hardware.",
+        "en": "Digital logic design, configurable hardware, parallel circuits, and hardware architecture.",
+        "es": "Diseño de lógica digital, hardware configurable, circuitos paralelos y arquitectura de hardware."
+      },
+      "tags": ["Hardware"]
+    },
+    {
+      "title": "VHDL",
+      "icon": "VHDL.svg",
+      "text": {
+        "pt": "Descrição de hardware, modelagem de circuitos digitais, máquinas de estados finitos e design com FPGA.",
+        "en": "Hardware description, digital circuit modeling, finite state machines, and FPGA design.",
+        "es": "Descripción de hardware, modelado de circuitos digitales, máquinas de estados finitos y diseño con FPGA."
+      },
+      "tags": ["Hardware", "Linguagens"]
+    },
+    {
+      "title": "Machine Learning",
+      "icon": "Machine Learning.svg",
+      "text": {
+        "pt": "Modelagem, classificação, análise de features e experimentos com sistemas orientados por dados.",
+        "en": "Modeling, classification, feature thinking, and experiments with data-driven systems.",
+        "es": "Modelado, clasificación, análisis de features y experimentos con sistemas orientados por datos."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "Calculus",
+      "icon": "Calculus.svg",
+      "text": {
+        "pt": "Limites, derivadas, integrais e modelagem contínua.",
+        "en": "Limits, derivatives, integrals, and continuous modeling.",
+        "es": "Límites, derivadas, integrales y modelado continuo."
+      },
+      "tags": ["Matemática"]
+    },
+    {
+      "title": "Linear Algebra",
+      "icon": "LinearAlgebra.svg",
+      "text": {
+        "pt": "Matrizes, vetores e transformações lineares.",
+        "en": "Matrices, vectors, and linear transformations.",
+        "es": "Matrices, vectores y transformaciones lineales."
+      },
+      "tags": ["Matemática"]
+    },
+    {
+      "title": "Analytic Geometry",
+      "icon": "AnalyticGeometry.svg",
+      "text": {
+        "pt": "Sistemas de coordenadas, retas, planos e cônicas.",
+        "en": "Coordinate systems, lines, planes, and conics.",
+        "es": "Sistemas de coordenadas, rectas, planos y cónicas."
+      },
+      "tags": ["Matemática"]
+    },
+    {
+      "title": "Statistics and Probability",
+      "icon": "Statistics.svg",
+      "text": {
+        "pt": "Análise de dados, distribuições e inferência.",
+        "en": "Data analysis, distributions, and inference.",
+        "es": "Análisis de datos, distribuciones e inferencia."
+      },
+      "tags": ["Matemática"]
+    },
+    {
+      "title": "TensorFlow",
+      "icon": "TensorFlow.svg",
+      "text": {
+        "pt": "Criação de modelos de deep learning e redes neurais.",
+        "en": "Creating deep learning models and neural networks.",
+        "es": "Creación de modelos de deep learning y redes neuronales."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "Pandas",
+      "icon": "Pandas.svg",
+      "text": {
+        "pt": "Manipulação e análise de dados tabulares.",
+        "en": "Manipulation and analysis of tabular data.",
+        "es": "Manipulación y análisis de datos tabulares."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "Scikit-Learn",
+      "icon": "Scikit-Learn.svg",
+      "text": {
+        "pt": "Modelos clássicos de machine learning e análise de dados.",
+        "en": "Classic machine learning models and data analysis.",
+        "es": "Modelos clásicos de machine learning y análisis de datos."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "OpenCV",
+      "icon": "OpenCV.svg",
+      "text": {
+        "pt": "Visão computacional e processamento de imagens.",
+        "en": "Computer vision and image processing.",
+        "es": "Visión por computadora y procesamiento de imágenes."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "Dash",
+      "icon": "Dash.svg",
+      "text": {
+        "pt": "Criação de dashboards interativos e aplicações analíticas web.",
+        "en": "Creating interactive dashboards and analytical web applications.",
+        "es": "Creación de dashboards interactivos y aplicaciones analíticas web."
+      },
+      "tags": ["Dados", "Web"]
+    },
+    {
+      "title": "Matplotlib",
+      "icon": "Matplotlib.svg",
+      "text": {
+        "pt": "Visualização de dados e criação de gráficos em Python.",
+        "en": "Data visualization and plotting in Python.",
+        "es": "Visualización de datos y creación de gráficos en Python."
+      },
+      "tags": ["Dados"]
+    },
+    {
+      "title": "Physics",
+      "icon": "Physics.svg",
+      "text": {
+        "pt": "Mecânica, eletromagnetismo e raciocínio científico aplicado à resolução de problemas técnicos.",
+        "en": "Mechanics, electromagnetism, and scientific reasoning for technical problem solving.",
+        "es": "Mecánica, electromagnetismo y razonamiento científico aplicado a la resolución de problemas técnicos."
+      },
+      "tags": ["Ciência"]
+    },
+    {
+      "title": "Docker",
+      "icon": "Docker.svg",
+      "text": {
+        "pt": "Containerização de aplicações, ambientes reproduzíveis e deploy.",
+        "en": "Application containerization, reproducible environments, and deployment.",
+        "es": "Containerización de aplicaciones, entornos reproducibles y despliegue."
+      },
+      "tags": ["DevOps", "Backend"]
+    },
+    {
+      "title": "Química",
+      "icon": "chemistry.svg",
+      "text": {
+        "pt": "Química geral, orgânica e inorgânica.",
+        "en": "General, organic, and inorganic chemistry.",
+        "es": "Química general, orgánica e inorgánica."
+      },
+      "tags": ["Ciência"]
+    }
+  ],
   "firstRowSkills": [
     "Python",
-    "Javascript",
+    "JavaScript",
     "C",
     "CSS",
     "Next.js",
@@ -14,15 +426,24 @@
     "Node.js",
     "Firebase",
     "React Native",
-    "Typescript",
+    "TypeScript",
     "Machine Learning",
     "Bootstrap",
-    "Advanced Math",
+    "Calculus",
     "Java",
     "AWS",
     "GCP",
     "Cloudflare",
-    "Physics"
+    "Postgres",
+    "Prisma",
+    "Ansible",
+    "Physics",
+    "TensorFlow",
+    "FPGA",
+    "Pandas",
+    "Scikit-Learn",
+    "Docker",
+    "Química"
   ],
   "secondRowSkills": [
     "React Native",
@@ -34,19 +455,30 @@
     "Tailwind",
     "HTML5",
     "Python",
-    "Javascript",
+    "JavaScript",
     "C",
     "Cloudflare",
     "Next.js",
     "Flutter",
     "AWS",
     "React",
-    "Typescript",
+    "TypeScript",
     "Arduino",
     "Bootstrap",
-    "Advanced Math",
+    "OpenCV",
     "SQL",
     "GCP",
+    "Tauri",
+    "Terraform",
+    "FPGA",
+    "VHDL",
+    "Dash",
+    "Matplotlib",
+    "Linear Algebra",
+    "Analytic Geometry",
+    "Statistics and Probability",
+    "Docker",
+    "Química",
     "Physics"
   ]
 }

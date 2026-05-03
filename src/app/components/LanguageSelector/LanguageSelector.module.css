@@ -1,0 +1,88 @@
+.languageSelector {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.languageButton,
+.languageOption {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: rgba(24, 24, 24, 0.88);
+  color: whitesmoke;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.languageButton {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 999px;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.languageButton:hover,
+.languageOption:hover,
+.languageOption.active {
+  border-color: rgba(255, 255, 255, 0.42);
+  background-color: rgba(48, 48, 48, 0.94);
+}
+
+.languageButton:active,
+.languageOption:active {
+  transform: translateY(1px);
+}
+
+.languageMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 150px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background-color: rgba(15, 15, 15, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.languageOption {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  border-radius: 6px;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.languageOption span:first-child {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .languageSelector {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .languageButton {
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -1,8 +1,71 @@
+"use client";
+
 import GithubBtn from './githubBtn';
 import LinkedinBtn from './linkedinBtn';
+import { useEffect, useState } from 'react';
+import { useI18n } from '../../i18n';
 import styles from './navbar.module.css'
 
+const sectionIds = ["home", "education", "projects", "skills"] as const;
+
+type SectionId = (typeof sectionIds)[number];
+
 export default function Navbar() {
+    const { t } = useI18n();
+    const [activeSection, setActiveSection] = useState<SectionId>("home");
+
+    const navItems: { id: SectionId; label: string }[] = [
+        { id: "home", label: t("nav.home") },
+        { id: "education", label: t("nav.education") },
+        { id: "projects", label: t("nav.projects") },
+        { id: "skills", label: t("nav.skills") },
+    ];
+
+    useEffect(() => {
+        let animationFrame = 0;
+
+        function updateActiveSection() {
+            animationFrame = 0;
+
+            const nextSection = getSectionAtViewportAnchor();
+
+            setActiveSection((currentSection) => {
+                if (currentSection === nextSection) {
+                    return currentSection;
+                }
+
+                return nextSection;
+            });
+
+            const nextHash = `#${nextSection}`;
+
+            if (window.location.hash !== nextHash) {
+                window.history.replaceState(
+                    null,
+                    "",
+                    `${window.location.pathname}${window.location.search}${nextHash}`,
+                );
+            }
+        }
+
+        function queueUpdate() {
+            if (animationFrame) return;
+            animationFrame = window.requestAnimationFrame(updateActiveSection);
+        }
+
+        queueUpdate();
+        window.addEventListener("scroll", queueUpdate, { passive: true });
+        window.addEventListener("resize", queueUpdate);
+
+        return () => {
+            if (animationFrame) {
+                window.cancelAnimationFrame(animationFrame);
+            }
+
+            window.removeEventListener("scroll", queueUpdate);
+            window.removeEventListener("resize", queueUpdate);
+        };
+    }, []);
 
 
     return (
@@ -16,17 +79,18 @@ export default function Navbar() {
 
             {/* <Name /> */}
             <div className={styles.routingBtnsContainer}>
-                <a href="#home">
-                    <NavbarButton >Início</NavbarButton>
-                </a>
-
-                <a href="#projects">
-                    <NavbarButton>Projetos</NavbarButton>
-                </a>
-
-                <a href="#skills">
-                    <NavbarButton>Habilidades</NavbarButton>
-                </a>
+                {navItems.map((item) => (
+                    <a
+                        href={`#${item.id}`}
+                        aria-current={activeSection === item.id ? "page" : undefined}
+                        key={item.id}
+                        onClick={() => setActiveSection(item.id)}
+                    >
+                        <NavbarButton active={activeSection === item.id}>
+                            {item.label}
+                        </NavbarButton>
+                    </a>
+                ))}
 
                 
             </div>
@@ -39,6 +103,29 @@ export default function Navbar() {
     )
 }
 
+function getSectionAtViewportAnchor(): SectionId {
+    const viewportAnchor = window.innerHeight * 0.38;
+    let fallbackSection: SectionId = "home";
+
+    for (const sectionId of sectionIds) {
+        const section = document.getElementById(sectionId);
+
+        if (!section) continue;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= viewportAnchor && rect.bottom > viewportAnchor) {
+            return sectionId;
+        }
+
+        if (rect.top <= viewportAnchor) {
+            fallbackSection = sectionId;
+        }
+    }
+
+    return fallbackSection;
+}
+
 function Name() {
     return (
         <div className={styles.name}>
@@ -48,10 +135,16 @@ function Name() {
     )
 }
 
-function NavbarButton({ children }: { children: React.ReactNode }) {
+function NavbarButton({
+    active,
+    children,
+}: {
+    active?: boolean;
+    children: React.ReactNode;
+}) {
 
     return (
-        <div className={styles.navbar_btn}>
+        <div className={`${styles.navbar_btn} ${active ? styles.active : ""}`}>
             <span>{children}</span>
         </div>
     )

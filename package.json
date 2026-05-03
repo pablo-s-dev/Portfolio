@@ -10,6 +10,8 @@
 	},
 	"dependencies": {
 		"@fullpage/react-fullpage": "^0.1.40",
+		"@iconify-icons/solar": "^1.2.3",
+		"@iconify/react": "^4.1.1",
 		"fontfaceobserver": "^2.3.0",
 		"framer-motion": "^10.17.0",
 		"next": "^16.0.1",
@@ -17,7 +19,6 @@
 		"react-dom": "^18"
 	},
 	"devDependencies": {
-		"@iconify/react": "^4.1.1",
 		"@types/fontfaceobserver": "^2.1.3",
 		"@types/node": "^20",
 		"@types/react": "^18",

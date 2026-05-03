@@ -2,12 +2,15 @@
 
 import styles from "./page.module.css";
 import Welcome from "./components/Welcome";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import { useEffect, useRef } from "react";
 import Head from "next/head";
 import FontFaceObserver from "fontfaceobserver";
 import Navbar from "./components/Navbar";
+import { LanguageProvider } from "./i18n";
+import LanguageSelector from "./components/LanguageSelector";
 
 function adjustViewportHeight(): void {
   const vv = window.visualViewport;
@@ -46,7 +49,7 @@ export default function Home() {
 
   return (
     // className = { styles.main }
-    <>
+    <LanguageProvider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> </meta>
         <link rel="preload" href="/Fonts/Inter.ttf" as="font"></link>
@@ -55,11 +58,13 @@ export default function Home() {
       <main className={styles.main} ref={ref}>
         <Navbar />
         <Welcome />
+        <Education />
         {/* <ScrollLine /> */}
         <Projects />
         <Skills />
         {/* <Navbar /> */}
+        <LanguageSelector />
       </main>
-    </>
+    </LanguageProvider>
   );
 }

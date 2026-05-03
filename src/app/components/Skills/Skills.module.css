@@ -2,6 +2,7 @@
     user-select: none;
     z-index: 200;
 }
+
 .tag h1 {
     font-size: 2rem;
     color: rgb(121, 121, 121);
@@ -14,12 +15,12 @@
     padding: 10px 10vw;
     max-width: 100%;
     overflow: hidden;
-    text-align: center;
     overflow-x: hidden;
+    text-align: center;
     scroll-snap-align: center;
-
-    
+    scroll-margin: 10vmin;
 }
+
 .skillsWrapper {
     display: flex;
     flex-direction: row;
@@ -28,7 +29,6 @@
     width: 100%;
     overflow: hidden;
     contain: content;
-    
 }
 
 .skillset {
@@ -41,59 +41,50 @@
     gap: 20px;
     transform: translate3d(0, 0, 0);
     text-rendering: optimizeLegibility;
-
 }
 
 .skillsWrapper:nth-child(odd) .skillset {
     animation: goLeft 20s linear forwards infinite;
     will-change: transform;
 }
+
 .skillsWrapper:nth-child(even) .skillset {
     animation: goRight 20s linear forwards infinite;
     will-change: transform;
 }
 
-/* @media (hover: hover) and (pointer: fine) {
-    .skillsWrapper:hover .skillset {
-        animation-play-state: paused;
-    }
-} */
-
-
 .skill {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    text-align: center;
     align-items: center;
     width: min-content;
     height: 170px;
     aspect-ratio: 1;
+    border-radius: 8px;
     background-color: rgb(20, 20, 20);
-    transform: translate3d(0, 0, 0);
-    border-radius: 15px;
-    transition: all 0.2s ease;
-    padding: 10px;
-    gap: 10px;
     color: rgb(194, 194, 194);
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s ease;
 }
 
 .skill .icon {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
+
 .skill .icon img {
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .skill:hover {
     transform: scale(1.05);
-    /* order: -2; */
 }
-
-
 
 .skillsContainer {
     display: flex;
@@ -101,17 +92,248 @@
     gap: 10px;
 }
 
+.staticSkills {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+}
 
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-/* .goToEnd{
-	position: relative;
-	left: 100vw;
-} */
+.searchLabel {
+    color: rgb(214, 214, 214);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
 
-/* .skill:nth-child(1) {
-	order: 2;
-	background-color: aqua;
-} */
+.searchControls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
+}
+
+.searchInput,
+.searchButton,
+.clearButton {
+    height: 44px;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.searchInput {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-color: rgb(20, 20, 20);
+    color: whitesmoke;
+    outline: none;
+    padding: 0 14px;
+}
+
+.searchInput:focus {
+    border-color: var(--strong-color);
+    box-shadow: 0 0 0 3px rgba(143, 152, 175, 0.2);
+}
+
+.searchButton,
+.clearButton {
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0 18px;
+    font-weight: 700;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.searchButton {
+    background-color: var(--strong-color);
+    color: rgb(12, 12, 12);
+}
+
+.clearButton {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.16);
+    color: rgb(218, 218, 218);
+}
+
+.searchButton:hover:not(:disabled),
+.clearButton:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.42);
+}
+
+.searchButton:disabled,
+.clearButton:disabled {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+.staticSkillsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 6px;
+}
+
+.skillGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.groupHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 8px;
+}
+
+.groupHeader h2 {
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+.groupHeader span {
+    min-width: 28px;
+    border-radius: 999px;
+    background-color: rgba(143, 152, 175, 0.14);
+    color: rgb(220, 220, 220);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 6px 8px;
+    text-align: center;
+}
+
+.staticSkillGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.staticSkill,
+.skeletonSkill {
+    min-height: 184px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: rgb(20, 20, 20);
+    padding: 14px;
+}
+
+.staticSkill {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.staticSkillHeader,
+.skeletonTop {
+    display: flex;
+    min-height: 42px;
+    align-items: center;
+    gap: 10px;
+}
+
+.staticIcon {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+}
+
+.staticIcon img {
+    object-fit: contain;
+}
+
+.staticSkill h3 {
+    color: whitesmoke;
+    font-size: 1rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.staticSkill p,
+.emptySearch {
+    color: rgb(188, 188, 188);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.skillTags,
+.skeletonTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.skillTags span {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: rgb(220, 220, 220);
+    font-size: 0.74rem;
+    line-height: 1;
+    padding: 6px 8px;
+}
+
+.skeletonSkill {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skeletonIcon,
+.skeletonTitle,
+.skeletonLine,
+.skeletonTags span {
+    display: block;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.08)
+    );
+    background-size: 240% 100%;
+    animation: skeletonLoading 1.1s ease-in-out infinite;
+}
+
+.skeletonIcon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+}
+
+.skeletonTitle {
+    width: 52%;
+    height: 18px;
+}
+
+.skeletonLine {
+    width: 100%;
+    height: 12px;
+}
+
+.skeletonLine:nth-child(3) {
+    width: 78%;
+}
+
+.skeletonTags {
+    margin-top: auto;
+}
+
+.skeletonTags span {
+    width: 62px;
+    height: 24px;
+}
+
 @keyframes goLeft {
     0% {
         transform: translateX(0);
@@ -120,6 +342,7 @@
         transform: translateX(-100%);
     }
 }
+
 @keyframes goRight {
     0% {
         transform: translateX(-100%);
@@ -128,6 +351,7 @@
         transform: translateX(0%);
     }
 }
+
 @keyframes goUp {
     0% {
         transform: translateX(0);
@@ -137,38 +361,51 @@
     }
 }
 
+@keyframes skeletonLoading {
+    0% {
+        background-position: 120% 0;
+    }
+    100% {
+        background-position: -120% 0;
+    }
+}
 
-@media screen  and (max-width: 700px) {
-   .tag h1 {
-       font-size: 1.5rem;
-   }
-   .skill {
-    font-size: 0.5rem;
-    font-weight: 100;
-   }
-   .skill {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        text-align: center;
-        align-items: center;
-        width: min-content;
+@media screen and (max-width: 700px) {
+    .tag h1 {
+        font-size: 1.5rem;
+    }
+
+    .skill {
         height: 100px;
-        aspect-ratio: 1;
-        background-color: rgb(20, 20, 20);
-        transform: translate3d(0, 0, 0);
-        border-radius: 15px;
-        transition: all 0.2s ease;
-        padding: 10px;
-        gap: 10px;
+        border-radius: 8px;
         font-size: 0.8rem;
-
+        font-weight: 100;
     }
 
     .skill .icon {
-        position: relative;
         width: 32px;
         height: 32px;
-        object-fit: cover;
+    }
+
+    .searchControls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .searchInput {
+        grid-column: 1 / -1;
+    }
+
+    .searchButton,
+    .clearButton {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .staticSkillsContent {
+        /* No max-height */
+    }
+
+    .staticSkillGrid {
+        grid-template-columns: 1fr;
     }
 }
