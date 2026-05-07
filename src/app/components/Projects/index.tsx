@@ -1,13 +1,7 @@
 "use client";
 import styles from "./Projects.module.css";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import {
-  RefObject,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { RefObject, useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   getLocalizedText,
   Language,
@@ -17,7 +11,6 @@ import {
 } from "../../i18n";
 
 const projects: ProjectData[] = [
-
   {
     title: "Hearken",
     description: {
@@ -39,7 +32,7 @@ const projects: ProjectData[] = [
       "Aprendizado",
     ],
   },
-  
+
   {
     title: "NurseLink",
     description: {
@@ -70,7 +63,7 @@ const projects: ProjectData[] = [
       "Firebase",
       "Google Cloud Functions",
     ],
-    openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog"
+    openUrl: "https://play.google.com/store/apps/details?id=com.arca.tindog",
   },
 
   {
@@ -81,7 +74,8 @@ const projects: ProjectData[] = [
       es: "Voice Reminder — Keep Focus es una extensión de Chrome que reproduce recordatorios de voz personalizados en intervalos regulares para ayudarte a mantener el enfoque.",
     },
     gitUrl: "https://github.com/pablo-s-dev/voice-reminder",
-    openUrl: "https://chromewebstore.google.com/detail/mldkadifcljcmkkjbgcchghmkhcanlie?utm_source=item-share-cb",
+    openUrl:
+      "https://chromewebstore.google.com/detail/mldkadifcljcmkkjbgcchghmkhcanlie?utm_source=item-share-cb",
     tags: [
       "JavaScript",
       "Extensão Chrome",
@@ -93,7 +87,7 @@ const projects: ProjectData[] = [
     imgPath: "/ProjectImgs/VoiceReminder.png",
   },
 
-    {
+  {
     title: "Infinite Canvas Drawing",
     description: {
       pt: "Infinite Canvas Drawing é um aplicativo de desenho com canvas infinito: você pode dar zoom e navegar pelo canvas livremente. Ele também conta com um modo ponteiro, que permite desenhar sem que o dedo cubra a visão do desenho.",
@@ -107,7 +101,6 @@ const projects: ProjectData[] = [
     tags: ["React Native", "TypeScript", "Desenho"],
   },
 
-
   {
     title: "PyContextMenu",
     description: {
@@ -117,10 +110,7 @@ const projects: ProjectData[] = [
     },
     imgPath: "/ProjectImgs/pycontextmenu_smooth.png",
     gitUrl: "https://github.com/pablo-s-dev/PyContextMenu",
-    tags: [
-      "Python",
-      "Ferramenta DEV"
-    ],
+    tags: ["Python", "Ferramenta DEV"],
   },
   {
     title: "Dev Create App",
@@ -131,16 +121,8 @@ const projects: ProjectData[] = [
     },
     imgPath: "/ProjectImgs/dev.png",
     gitUrl: "https://github.com/pablo-s-dev/dev-create-app",
-    tags: [
-      "C",
-      "CLI",
-      "Python",
-      "Node.js",
-      "Vite",
-      "Ferramenta DEV"
-    ],
+    tags: ["C", "CLI", "Python", "Node.js", "Vite", "Ferramenta DEV"],
   },
-
 
   {
     title: "Poliprocess",
@@ -275,18 +257,21 @@ export default function Projects() {
     offset: ["start end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.9, 1], ["100%", "100%", "0%"]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.9, 1],
+    ["100%", "100%", "0%"],
+  );
 
   return (
-    <motion.section 
-
-      style={{ opacity}}
-      ref={projectsPage}>
+    <motion.section style={{ opacity }} ref={projectsPage}>
       <div className={styles.projectsPage} id="projects">
         <div ref={projectWrapper} className={styles.projectsWrapper}>
           <div className={styles.jsxTag}>
             <h1>
-              {"<"}<strong>{` ${t("nav.projects")} `}</strong>{">"}
+              {"<"}
+              <strong>{` ${t("nav.projects")} `}</strong>
+              {">"}
             </h1>
           </div>
 
@@ -294,7 +279,9 @@ export default function Projects() {
 
           <div className={styles.jsxTag}>
             <h1>
-              {"</"}<strong>{` ${t("nav.projects")} `}</strong>{">"}
+              {"</"}
+              <strong>{` ${t("nav.projects")} `}</strong>
+              {">"}
             </h1>
           </div>
         </div>
@@ -384,17 +371,11 @@ function Project({
       ref={ref}
       style={{
         opacity,
-        y
+        y,
       }}
     >
-      
       <div className={styles.card}>
-        <h1
-        className={styles.card_title}
-
-      >
-        {data.title}
-      </h1>
+        <h1 className={styles.card_title}>{data.title}</h1>
         {/* <div className={styles.imgContainer}> */}
         <img
           src={data.imgPath}
@@ -411,20 +392,51 @@ function Project({
           // style={{ y }}
         >
           <p>{description}</p>
-          <p>{tagsLabel}: {tags.join("; ")}</p>
+          <p>
+            {tagsLabel}: {tags.join("; ")}
+          </p>
         </motion.div>
         <div className={styles.btnContainer}>
-          <a href={data.openUrl} target="_blank">
-            <div className={styles.btn} hidden={data.openUrl === undefined}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
-	              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4m-8-2l8-8m0 0v5m0-5h-5" />
+          <a
+            href={data.openUrl}
+            target="_blank"
+            hidden={data.openUrl === undefined}
+          >
+            <div className={styles.btn}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4m-8-2l8-8m0 0v5m0-5h-5"
+                />
               </svg>
             </div>
           </a>
-          <a href={data.gitUrl} target="_blank" title="GitHub">
+          <a
+            href={data.gitUrl}
+            target="_blank"
+            title="GitHub"
+            hidden={data.gitUrl === undefined}
+          >
             <div className={styles.btn} hidden={data.gitUrl === undefined}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16">
-	              <path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38c0-.27.01-1.13.01-2.2c0-.75-.25-1.23-.54-1.48c1.78-.2 3.65-.88 3.65-3.95c0-.88-.31-1.59-.82-2.15c.08-.2.36-1.02-.08-2.12c0 0-.67-.22-2.2.82c-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82c-.44 1.1-.16 1.92-.08 2.12c-.51.56-.82 1.28-.82 2.15c0 3.06 1.86 3.75 3.64 3.95c-.23.2-.44.55-.51 1.07c-.46.21-1.61.55-2.33-.66c-.15-.24-.6-.83-1.23-.82c-.67.01-.27.38.01.53c.34.19.73.9.82 1.13c.16.45.68 1.31 2.69.94c0 .67.01 1.3.01 1.49c0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38c0-.27.01-1.13.01-2.2c0-.75-.25-1.23-.54-1.48c1.78-.2 3.65-.88 3.65-3.95c0-.88-.31-1.59-.82-2.15c.08-.2.36-1.02-.08-2.12c0 0-.67-.22-2.2.82c-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82c-.44 1.1-.16 1.92-.08 2.12c-.51.56-.82 1.28-.82 2.15c0 3.06 1.86 3.75 3.64 3.95c-.23.2-.44.55-.51 1.07c-.46.21-1.61.55-2.33-.66c-.15-.24-.6-.83-1.23-.82c-.67.01-.27.38.01.53c.34.19.73.9.82 1.13c.16.45.68 1.31 2.69.94c0 .67.01 1.3.01 1.49c0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"
+                />
               </svg>
             </div>
           </a>
