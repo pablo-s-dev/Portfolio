@@ -11,6 +11,7 @@ import FontFaceObserver from "fontfaceobserver";
 import Navbar from "./components/Navbar";
 import { LanguageProvider } from "./i18n";
 import LanguageSelector from "./components/LanguageSelector";
+import { ScrollProvider } from "./ScrollContext";
 
 function adjustViewportHeight(): void {
   const vv = window.visualViewport;
@@ -58,13 +59,15 @@ export default function Home() {
       <div className={styles.pageWrapper}>
         <Navbar />
         <main className={styles.main} ref={ref}>
-          <Welcome />
-          <Education />
-          {/* <ScrollLine /> */}
-          <Projects />
-          <Skills />
-          {/* <Navbar /> */}
-          <LanguageSelector />
+          <ScrollProvider containerRef={ref}>
+            <Welcome />
+            <Education />
+            {/* <ScrollLine /> */}
+            <Projects />
+            <Skills />
+            {/* <Navbar /> */}
+            <LanguageSelector />
+          </ScrollProvider>
         </main>
       </div>
     </LanguageProvider>
