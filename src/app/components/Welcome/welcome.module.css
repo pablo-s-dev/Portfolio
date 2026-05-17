@@ -8,9 +8,8 @@
 
   width: 100svw;
   overflow-x: auto;
-  height: calc(100 * var(--s, 1vh));
+  height: calc(80 * var(--s, 1vh));
   margin-top: calc(20 * var(--s, 1vh));
-  margin-bottom: calc(10 * var(--s, 1vh));
 
   /* scroll-snap-align: center; */
   /* scroll-snap-stop: always; */

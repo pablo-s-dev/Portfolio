@@ -6,9 +6,10 @@
   gap: 32px;
   width: 100svw;
   min-height: calc(100svh - 72px);
-  padding: 72px 10vw;
+  padding: 0px 10vw;
   overflow: hidden;
   scroll-margin-top: 72px;
+  margin-bottom: 10rem;
 }
 
 .tag {
