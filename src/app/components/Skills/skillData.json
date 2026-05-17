@@ -429,6 +429,16 @@
         "es": "Orquestación de contenedores y automatización de despliegues."
       },
       "tags": ["DevOps", "Cloud"]
+    },
+    {
+      "title": "Dart",
+      "icon": "Dart.svg",
+      "text": {
+        "pt": "Linguagem otimizada para interfaces multiplataforma com foco em Flutter.",
+        "en": "Language optimized for cross-platform interfaces with a focus on Flutter.",
+        "es": "Lenguaje optimizado para interfaces multiplataforma con enfoque en Flutter."
+      },
+      "tags": ["Linguagens", "Mobile"]
     }
   ],
   "firstRowSkills": [
@@ -465,7 +475,8 @@
     "Docker",
     "Química",
     "Jest",
-    "Kubernetes"
+    "Kubernetes",
+    "Dart"
   ],
   "secondRowSkills": [
     "React Native",
@@ -503,6 +514,7 @@
     "Química",
     "Physics",
     "Jest",
-    "Kubernetes"
+    "Kubernetes",
+    "Dart"
   ]
 }
