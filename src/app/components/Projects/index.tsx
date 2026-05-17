@@ -10,6 +10,7 @@ import {
   useI18n,
 } from "../../i18n";
 import { Icon } from "@iconify/react";
+import { useScrollContainer } from "../../ScrollContext";
 
 const projects: ProjectData[] = [
   {
@@ -262,7 +263,10 @@ export default function Projects() {
     );
   });
 
+  const scrollContainer = useScrollContainer() || undefined;
+
   const { scrollYProgress } = useScroll({
+    container: scrollContainer,
     target: projectsPage,
     offset: ["start end", "end start"],
   });
@@ -328,12 +332,14 @@ function Project({
   const ref = useRef(null);
   const { t } = useI18n();
 
+  const scrollContainer = useScrollContainer() || undefined;
+
   const { scrollYProgress } = useScroll({
+    container: scrollContainer,
     target: ref,
     offset: ["end end", "end start"],
   });
 
-  // const y = useTransform(scrollYProgress, [0, 1], ["15vmin", "-15vmin"])
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -426,18 +432,18 @@ function Project({
                           ? "mdi:download"
                           : "mdi:web"
                   }
-                  width="100%"
-                  height="100%"
+                  width="1.2em"
+                  height="1.2em"
                 />
+                <span className={styles.btnLabel}>{t("projects.open")}</span>
               </div>
-              <span className={styles.btnLabel}>{t("projects.open")}</span>
             </a>
           ) : (
             <div className={`${styles.btnWrapper} ${styles.disabled}`}>
               <div className={styles.btn}>
-                <Icon icon="mdi:web" width="100%" height="100%" />
+                <Icon icon="mdi:web" width="1.2em" height="1.2em" />
+                <span className={styles.btnLabel}>{t("projects.open")}</span>
               </div>
-              <span className={styles.btnLabel}>{t("projects.open")}</span>
             </div>
           )}
 
@@ -449,16 +455,16 @@ function Project({
               className={styles.btnWrapper}
             >
               <div className={styles.btn}>
-                <Icon icon="mdi:github" width="100%" height="100%" />
+                <Icon icon="mdi:github" width="1.2em" height="1.2em" />
+                <span className={styles.btnLabel}>{t("projects.github")}</span>
               </div>
-              <span className={styles.btnLabel}>{t("projects.github")}</span>
             </a>
           ) : (
             <div className={`${styles.btnWrapper} ${styles.disabled}`}>
               <div className={styles.btn}>
-                <Icon icon="mdi:github" width="100%" height="100%" />
+                <Icon icon="mdi:github" width="1.2em" height="1.2em" />
+                <span className={styles.btnLabel}>{t("projects.github")}</span>
               </div>
-              <span className={styles.btnLabel}>{t("projects.github")}</span>
             </div>
           )}
         </div>

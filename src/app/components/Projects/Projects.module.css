@@ -7,8 +7,9 @@
   padding: 0;
   overflow-x: clip;
   scroll-snap-align: none !important;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
   scroll-margin: 4rem;
+  margin-bottom: 10rem;
 }
 .jsxTag {
   user-select: none;
@@ -94,9 +95,10 @@
   z-index: 100;
   flex: 1;
   gap: 2rem;
+
 }
 .card_title {
-  padding: 1rem 0;
+  padding: 0rem 0;
   grid-area: title;
   font-size: 2rem;
   font-weight: bold;
@@ -209,19 +211,19 @@
 
 .btn {
   display: flex;
+  flex-direction: row;
   text-align: center;
   text-decoration: none;
   color: inherit;
-  padding: 0.5rem;
+  padding: 0.6rem 1.2rem;
   background-color: rgba(31, 31, 31, 0.774);
   /* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
   border-radius: 0.5rem;
   user-select: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  gap: 0.5rem;
 }
 .btn[hidden] {
   display: none;
