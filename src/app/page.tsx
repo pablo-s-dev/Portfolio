@@ -55,16 +55,18 @@ export default function Home() {
         <link rel="preload" href="/Fonts/Inter.ttf" as="font"></link>
         <link rel="preload" href="/ps000.png" as="image"></link>
       </Head>
-      <main className={styles.main} ref={ref}>
+      <div className={styles.pageWrapper}>
         <Navbar />
-        <Welcome />
-        <Education />
-        {/* <ScrollLine /> */}
-        <Projects />
-        <Skills />
-        {/* <Navbar /> */}
-        <LanguageSelector />
-      </main>
+        <main className={styles.main} ref={ref}>
+          <Welcome />
+          <Education />
+          {/* <ScrollLine /> */}
+          <Projects />
+          <Skills />
+          {/* <Navbar /> */}
+          <LanguageSelector />
+        </main>
+      </div>
     </LanguageProvider>
   );
 }

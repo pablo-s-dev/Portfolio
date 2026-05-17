@@ -409,6 +409,26 @@
         "es": "Química general, orgánica e inorgánica."
       },
       "tags": ["Ciência"]
+    },
+    {
+      "title": "Jest",
+      "icon": "Jest.svg",
+      "text": {
+        "pt": "Testes unitários e de integração em JavaScript e TypeScript.",
+        "en": "Unit and integration testing in JavaScript and TypeScript.",
+        "es": "Pruebas unitarias y de integración en JavaScript y TypeScript."
+      },
+      "tags": ["Testes"]
+    },
+    {
+      "title": "Kubernetes",
+      "icon": "Kubernetes.svg",
+      "text": {
+        "pt": "Orquestração de contêineres e automação de deploys.",
+        "en": "Container orchestration and deployment automation.",
+        "es": "Orquestación de contenedores y automatización de despliegues."
+      },
+      "tags": ["DevOps", "Cloud"]
     }
   ],
   "firstRowSkills": [
@@ -443,7 +463,9 @@
     "Pandas",
     "Scikit-Learn",
     "Docker",
-    "Química"
+    "Química",
+    "Jest",
+    "Kubernetes"
   ],
   "secondRowSkills": [
     "React Native",
@@ -479,6 +501,8 @@
     "Statistics and Probability",
     "Docker",
     "Química",
-    "Physics"
+    "Physics",
+    "Jest",
+    "Kubernetes"
   ]
 }

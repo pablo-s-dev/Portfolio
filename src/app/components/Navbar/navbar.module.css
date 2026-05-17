@@ -1,19 +1,16 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100lvw;
+  width: 100%;
   z-index: 1000;
-  background-color: rgba(46, 46, 46, 0.123);
+  background-color: rgba(17, 17, 17, 0.9);
   /* background-color: red; */
   backdrop-filter: blur(10px);
   overflow: hidden;
-  padding: calc(2 * var(--s, 1vh)) 10px;
+  padding: calc(2 * var(--s, 1vh)) 10px calc(0.5 * var(--s, 1vh)) 10px;
 }
 .navbar_btn {
   display: flex;

@@ -7,8 +7,8 @@
   padding: 0;
   overflow-x: clip;
   scroll-snap-align: none !important;
-  margin-bottom: 100px;
-  scroll-margin: 10vmin;
+  margin-bottom: 6rem;
+  scroll-margin: 4rem;
 }
 .jsxTag {
   user-select: none;
@@ -54,11 +54,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(70 * var(--s, 1vh));
+  min-height: calc(100 * var(--s, 1vh));
   width: 90vw;
   /* background-color: rgb(125, 87, 205); */
   font-size: 1rem;
-  height: calc(100 * var(--s, 1vh));
 }
 
 .project:first-of-type {
@@ -69,7 +68,7 @@
   scroll-snap-align: none !important;
   scroll-snap-stop: normal !important;
   height: calc(88 * var(--s, 1vh));
-  margin: 30px 0;
+  margin: 2rem 0;
 }
 
 /* .project:first-of-type .imgContainer,
@@ -85,7 +84,7 @@
     "links"
     "about";
   grid-template-columns: 100%;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: max-content max-content max-content auto;
   place-items: center;
   place-content: center;
   width: 100%;
@@ -94,14 +93,14 @@
   background-color: rgba(8, 8, 8, 0);
   z-index: 100;
   flex: 1;
+  gap: 2rem;
 }
 .card_title {
-  padding: 5vmin 0;
+  padding: 1rem 0;
   grid-area: title;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: calc(2 * var(--s, 1vh));
 }
 
 .imgContainer {
@@ -146,23 +145,16 @@
   text-align: center;
   font-weight: 300;
   color: rgb(150, 150, 150);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   text-rendering: optimizeLegibility;
   text-wrap: balance;
-  gap: calc(2 * var(--vmin, 1vmin));
+  gap: 1.5rem;
   line-height: 150%;
-  max-height: 100%;
   transform: translate3d(0, 0, 0);
   /* overflow-y: auto; */
   max-width: 90%;
-  padding: calc(5 * var(--vmin, 1vmin)) 0;
-  min-height: max-content;
+  padding: 0 0 2.5rem 0;
   text-align: center;
-}
-
-.btn {
-  width: 40px;
-  height: 40px;
 }
 
 .title {
@@ -178,13 +170,11 @@
 }
 .btnContainer {
   grid-area: links;
-  margin-top: calc(5 * var(--s, 1vh));
-  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: min(3vmin, 8px);
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -192,20 +182,46 @@
   margin: 0 auto;
 }
 
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.btnWrapper.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnWrapper.disabled .btn {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btnLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  user-select: none;
+}
+
 .btn {
   display: flex;
   text-align: center;
   text-decoration: none;
   color: inherit;
-  padding: 1vmin;
+  padding: 0.5rem;
   background-color: rgba(31, 31, 31, 0.774);
   /* background: linear-gradient(rgb(60, 46, 88), rgb(38, 24, 67)); */
-  border-radius: 5px;
+  border-radius: 0.5rem;
   user-select: none;
-  font-size: 2.5vmin;
+  font-size: 1.5rem;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 3rem;
+  height: 3rem;
 }
 .btn[hidden] {
   display: none;
@@ -219,6 +235,7 @@
 .btn:active {
   transform: scale(0.9);
 }
+
 
 /* @media (max-width: 480px) {
 	.card {
