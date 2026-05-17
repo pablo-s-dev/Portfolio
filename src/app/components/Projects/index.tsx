@@ -269,6 +269,7 @@ export default function Projects() {
     container: scrollContainer,
     target: projectsPage,
     offset: ["start end", "end start"],
+    layoutEffect: false,
   });
 
   const opacity = useTransform(
@@ -338,6 +339,7 @@ function Project({
     container: scrollContainer,
     target: ref,
     offset: ["end end", "end start"],
+    layoutEffect: false,
   });
 
   const opacity = useTransform(

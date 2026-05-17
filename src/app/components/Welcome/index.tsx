@@ -35,6 +35,7 @@ export default function Welcome() {
     container: scrollContainer,
     target: ref,
     offset: ["start start", "end start"],
+    layoutEffect: false,
   });
 
   const opacity = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
